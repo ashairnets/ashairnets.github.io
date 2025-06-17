@@ -1,13 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Cihat Yiğit - Game Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0f0f0f;
+        color: #ffffff;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
+        z-index: 1000;
+        border-bottom: 1px solid #222;
+      }
+      nav a {
+        color: #aaa;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #57a6ff;
+      }
+      section {
+        max-width: 960px;
+        margin: auto;
+        padding: 6rem 2rem 4rem;
+      }
+      h1, h2, h3 {
+        font-weight: 700;
+      }
+      .hero {
+        padding-top: 8rem;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        color: #bbb;
+        margin-top: 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        margin: 1rem 0.5rem 0;
+        border-radius: 6px;
+        background-color: #57a6ff;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .btn:hover {
+        background-color: #1e8fff;
+      }
+      .skills span {
+        background: #1e1e1e;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+        display: inline-block;
+        font-size: 0.95rem;
+      }
+      .project {
+        background: #1b1b1b;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .project a {
+        color: #57a6ff;
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.85rem;
+        color: #888;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="about">
+      <h1>Cihat Yiğit</h1>
+      <p>Game Developer focused on Unity, Multiplayer and WebGL games. Passionate about creative mechanics and technical depth.</p>
+      <a class="btn" href="/cv/Cihat_Yigit_CV.pdf" download>Download CV</a>
+      <a class="btn" href="#contact">Contact</a>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Unity</span><span>C#</span><span>WebGL</span><span>Mirror</span><span>Firebase</span>
+        <span>DOTween</span><span>Zenject</span><span>IronSource</span><span>Multiplayer</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Eggventure</h3>
+        <p>Physics-based puzzle runner with egg-matching mechanics.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.sobegame.eggup" target="_blank">View on Google Play</a>
+      </div>
+      <div class="project">
+        <h3>Hatch & Merge: TCG</h3>
+        <p>Card-based strategy merge game with stylized visuals.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.sobegame.hatchandmerge" target="_blank">View on Google Play</a>
+      </div>
+      <div class="project">
+        <h3>Combat Match</h3>
+        <p>Match-3 based hybrid casual combat puzzle game.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.sobegame.combatmatch" target="_blank">View on Google Play</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:yigitcihat@gmail.com">yigitcihat@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/cihat-yiğit/" target="_blank">cihat-yiğit</a></p>
+      <p>GitHub: <a href="https://github.com/yigitcihat" target="_blank">@yigitcihat</a></p>
+    </section>
+
+    <footer>
+      &copy; 2025 Cihat Yiğit. All rights reserved.
+    </footer>
   </body>
 </html>
