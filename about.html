@@ -38,12 +38,30 @@
       filter: drop-shadow(0 0 8px #ffe600);
     }
     .about-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 100px auto 50px auto;
       background-color: rgba(30, 30, 30, 0.85);
       border: 1px solid #444;
       border-radius: 16px;
-      padding: 3rem 2rem;
+      padding: 3rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .profile-column {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+    .profile-column img.profile {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid #ffe600;
+      margin-bottom: 1rem;
+    }
+    .text-column {
+      flex: 1;
     }
     .about-container h2 {
       font-size: 2rem;
@@ -52,17 +70,24 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .about-container img.profile {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid #ffe600;
-    }
     .about-text {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       line-height: 1.8;
+    }
+    .cv-btn {
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .section-title {
+      font-weight: 600;
+      margin-top: 2rem;
+      font-size: 1.3rem;
     }
     .tag-list {
       display: flex;
@@ -76,21 +101,6 @@
       border-radius: 20px;
       font-size: 0.9rem;
     }
-    .section-title {
-      font-weight: 600;
-      margin-top: 2rem;
-      font-size: 1.3rem;
-    }
-    .cv-btn {
-      margin-top: 1rem;
-      display: inline-block;
-      background: #fff;
-      color: #000;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
   </style>
 </head>
 <body>
@@ -101,34 +111,37 @@
   </a>
 
   <div class="about-container">
-    <h2>🧑‍💻 About Me</h2>
-    <img src="cihat-profile.jpg" alt="Cihat Yiğit" class="profile" />
-    <div class="about-text">
-      <p>I'm Cihat Yiğit, a Unity Game Developer specializing in mobile, PC, and WebGL games with a strong focus on multiplayer architecture. I’ve led teams, shipped games with millions of downloads, and continuously push for creative mechanics and solid architecture. I’m currently leading development at Sobe Game Studios.</p>
-      <p>Previously, I’ve contributed to puzzle, hypercasual, and multiplayer projects at Gamina and Gamejon. I have experience with ad monetization, analytics, scalable code patterns, and Unity WebGL delivery pipelines.</p>
+    <div class="profile-column">
+      <h2>🧑‍💻 About Me</h2>
+      <img src="cihat-profile.jpg" alt="Cihat Yiğit" class="profile" />
+      <a href="/cv/Cihat_Yigit_CV.pdf" class="cv-btn" download>Download My CV</a>
     </div>
-    <a href="/cv/Cihat_Yigit_CV.pdf" class="cv-btn" download>Download My CV</a>
+    <div class="text-column">
+      <div class="about-text">
+        <p>I'm Cihat Yiğit, a Unity Game Developer specializing in mobile, PC, and WebGL games with a strong focus on multiplayer architecture. I’ve led teams, shipped games with millions of downloads, and continuously push for creative mechanics and solid architecture. I’m currently leading development at Sobe Game Studios.</p>
+        <p>Previously, I’ve contributed to puzzle, hypercasual, and multiplayer projects at Gamina and Gamejon. I have experience with ad monetization, analytics, scalable code patterns, and Unity WebGL delivery pipelines.</p>
+      </div>
+      <div class="section-title">🛠️ Skills</div>
+      <div class="tag-list">
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+        <span class="tag">WebGL</span>
+        <span class="tag">Mirror</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">IronSource</span>
+        <span class="tag">DOTween</span>
+        <span class="tag">Zenject</span>
+        <span class="tag">Multiplayer</span>
+        <span class="tag">Addressables</span>
+      </div>
 
-    <div class="section-title">🛠️ Skills</div>
-    <div class="tag-list">
-      <span class="tag">Unity</span>
-      <span class="tag">C#</span>
-      <span class="tag">WebGL</span>
-      <span class="tag">Mirror</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">IronSource</span>
-      <span class="tag">DOTween</span>
-      <span class="tag">Zenject</span>
-      <span class="tag">Multiplayer</span>
-      <span class="tag">Addressables</span>
+      <div class="section-title">💼 Career</div>
+      <ul>
+        <li><strong>Sobe Game Studios:</strong> Senior Game Developer / Team Lead</li>
+        <li><strong>Gamina:</strong> Game Developer</li>
+        <li><strong>Gamejon:</strong> Unity Developer</li>
+      </ul>
     </div>
-
-    <div class="section-title">💼 Career</div>
-    <ul>
-      <li><strong>Sobe Game Studios:</strong> Senior Game Developer / Team Lead</li>
-      <li><strong>Gamina:</strong> Game Developer</li>
-      <li><strong>Gamejon:</strong> Unity Developer</li>
-    </ul>
   </div>
 
   <script>
