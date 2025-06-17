@@ -48,13 +48,15 @@
       border-radius: 20px;
       font-size: 0.8rem;
     }
-    .project-images {
+    .project-media {
       display: flex;
       gap: 1rem;
       margin-top: 0.5rem;
     }
-    .project-images img {
+    .project-media img,
+    .project-media video {
       width: 48%;
+      height: auto;
       border-radius: 8px;
       border: 1px solid #444;
       object-fit: cover;
@@ -73,7 +75,7 @@
         <span class="tag">PC</span>
         <span class="tag">Puzzle</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Eggventure_1.png" alt="Eggventure screenshot 1">
         <img src="images/Eggventure_2.png" alt="Eggventure screenshot 2">
       </div>
@@ -88,7 +90,7 @@
         <span class="tag">Co-op</span>
         <span class="tag">Horror</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Chained_for_Forgiveness_1.png" alt="Chained screenshot 1">
         <img src="images/Chained_for_Forgiveness_2.png" alt="Chained screenshot 2">
       </div>
@@ -96,8 +98,6 @@
 
     <h2>📱 Mobile Games</h2>
 
-    <!-- Template for each game -->
-    <!-- You can duplicate the block below and update the names and paths accordingly -->
     <div class="project">
       <h3>Soli Sort</h3>
       <p>A strategic twist on classic solitaire where players sort cards by color and sequence to clear the board in a relaxing yet brain-teasing challenge.</p>
@@ -105,7 +105,7 @@
         <span class="tag">Puzzle</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Soli_Sort_1.png" alt="Soli Sort screenshot 1">
         <img src="images/Soli_Sort_2.png" alt="Soli Sort screenshot 2">
       </div>
@@ -118,7 +118,7 @@
         <span class="tag">Puzzle</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Eggventure_Mobile_1.png" alt="Eggventure mobile 1">
         <img src="images/Eggventure_Mobile_2.png" alt="Eggventure mobile 2">
       </div>
@@ -130,13 +130,13 @@
       <div class="tag-list">
         <span class="tag">Match</span>
         <span class="tag">Action</span>
-	<span class="tag">Puzzle</span>
+        <span class="tag">Puzzle</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Combat_Match_1.png" alt="Combat Match screenshot 1">
         <img src="images/Combat_Match_2.png" alt="Combat Match screenshot 2">
-	<img src="images/Combat_Match_3.png" alt="Combat Match screenshot 3">
+
       </div>
     </div>
 
@@ -147,13 +147,12 @@
         <span class="tag">Puzzle</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <img src="images/Conquest_Blast_1.png" alt="Conquest Blast screenshot 1">
         <img src="images/Conquest_Blast_2.png" alt="Conquest Blast screenshot 2">
       </div>
     </div>
 
-   
     <div class="project">
       <h3>Canvas Tornado</h3>
       <p>Swipe-based action game where you control a destructive tornado on canvas.</p>
@@ -161,7 +160,7 @@
         <span class="tag">Arcade</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <video src="videos/Canvas_Tornado_1.mp4" autoplay loop muted playsinline></video>
         <video src="videos/Canvas_Tornado_2.mp4" autoplay loop muted playsinline></video>
       </div>
@@ -175,7 +174,7 @@
         <span class="tag">Art</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <video src="videos/Split_Canvas_1.mp4" autoplay loop muted playsinline></video>
         <video src="videos/Split_Canvas_2.mp4" autoplay loop muted playsinline></video>
       </div>
@@ -189,11 +188,12 @@
         <span class="tag">Simulation</span>
         <span class="tag">Mobile</span>
       </div>
-      <div class="project-images">
+      <div class="project-media">
         <video src="videos/Dress_Inc_1.mp4" autoplay loop muted playsinline></video>
         <video src="videos/Dress_Inc_2.mp4" autoplay loop muted playsinline></video>
       </div>
     </div>
+
   </div>
 </body>
 </html>
