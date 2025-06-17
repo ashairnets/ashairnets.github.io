@@ -61,14 +61,43 @@
       border: 1px solid #444;
       object-fit: cover;
     }
+#bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    a.home-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: inline-block;
+    }
+
+    .home-icon {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .home-icon:hover {
+      transform: rotate(20deg) scale(1.1);
+      filter: drop-shadow(0 0 8px #ffe600);
+    }
   </style>
 </head>
 <body>
 
-<a href="index.html" class="home-link">
+ <!-- Background canvas for particle animation -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Home button like About Me -->
+  <a href="index.html" class="home-link">
     <img src="home-icon.png" alt="Home" class="home-icon" />
-  </a>
-  <div class="project-section">
+  </a>  <div class="project-section">
     <h2>🛠️ Ongoing Projects</h2>
 
     <div class="project">
