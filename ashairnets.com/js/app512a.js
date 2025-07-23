@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
 
-    base = "index.html";
+    base = "https://www.sakarigin.com/";
 
     $("#overflowwo-inside,#overflowwo").click(function(e){
         e.stopImmediatePropagation();
