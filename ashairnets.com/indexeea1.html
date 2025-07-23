@@ -1,89 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>As Hairnet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Stil dosyaları -->
-    <link rel="stylesheet" href="ashairnets.com/js/vendor/splitting/splitting.css" />
-    <link rel="stylesheet" href="ashairnets.com/js/vendor/splitting/splitting-cells.css" />
-    <link rel="stylesheet" href="ashairnets.com/css/app.css" />
+<head>
+  <meta charset="UTF-8">
+  <title>As Hairnet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-    <style>
-      .font-brand {
-        font-family: 'Playfair Display', serif;
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="js/vendor/splitting/splitting.css">
+  <link rel="stylesheet" href="js/vendor/splitting/splitting-cells.css">
+  <link rel="stylesheet" href="css/stylee5d5.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .font-brand {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .text-black {
+      color: #000;
+    }
+
+          .font-sans { 
+        font-family: system-ui, -apple-system, sans-serif; 
       }
-    </style>
-  </head>
+      
+      /* Animasyon iyileştirmeleri */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        overflow-x: hidden;
+      }
+      
+      /* Hero Section Responsive */
+      .hero-section {
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+      
+      @media (min-width: 768px) {
+        .hero-section {
+          padding: 0;
+        }
+      }
+      
+      /* Text splitting için */
+      .char {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
+      
+      /* Hero paralaks için */
+      .hero-bg {
+        will-change: transform;
+      }
+      
+      /* Gallery resimler için hover efekt */
+      .gallery-image {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .gallery-image:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Logo için transition */
+      .logo-header {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      
+      /* Button hover iyileştirmeleri */
+      .hero-button,
+      .hover\\:bg-gray-800 {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Scroll animasyonları için initial state */
+      section > * {
+        will-change: transform, opacity;
+      }
+      
+      /* Performance optimizations */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Wave animations için (gelecekte eklenebilir) */
+      .wave {
+        animation: wave 6s ease-in-out infinite;
+      }
+      
+      @keyframes wave {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      /* Sakura Petals - Uçan Yapraklar */
+      .floating-petals {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
 
-  <body class="bg-white text-black font-sans">
+      
+      .petal {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0.8;
+        animation: sakuraFall linear infinite;
+        transform-origin: center;
+        background-image: url('img/petalo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: drop-shadow(0 1px 2px rgba(255, 182, 193, 0.3));
+      }
+      
+      @media (min-width: 768px) {
+        .petal {
+          width: 28px;
+          height: 28px;
+        }
+      }
+      
+      /* Individual petal positions and timings */
+      .petal-1 { 
+        left: 10%; 
+        animation: sakuraFall 3s linear infinite;
+        animation-delay: 0s;
+      }
+      .petal-2 { 
+        left: 20%; 
+        animation: sakuraFall 3.5s linear infinite;
+        animation-delay: 0.2s;
+      }
+      .petal-3 { 
+        left: 30%; 
+        animation: sakuraFall 4s linear infinite;
+        animation-delay: 0.4s;
+      }
+      .petal-4 { 
+        left: 40%; 
+        animation: sakuraFall 3.2s linear infinite;
+        animation-delay: 0.6s;
+      }
+      .petal-5 { 
+        left: 50%; 
+        animation: sakuraFall 3.8s linear infinite;
+        animation-delay: 0.8s;
+      }
+      .petal-6 { 
+        left: 60%; 
+        animation: sakuraFall 4.2s linear infinite;
+        animation-delay: 1s;
+      }
+      .petal-7 { 
+        left: 70%; 
+        animation: sakuraFall 3.6s linear infinite;
+        animation-delay: 1.2s;
+      }
+      .petal-8 { 
+        left: 80%; 
+        animation: sakuraFall 4.5s linear infinite;
+        animation-delay: 1.4s;
+      }
+      .petal-9 { 
+        left: 90%; 
+        animation: sakuraFall 3.3s linear infinite;
+        animation-delay: 1.6s;
+      }
+      .petal-10 { 
+        left: 95%; 
+        animation: sakuraFall 4.1s linear infinite;
+        animation-delay: 1.8s;
+      }
+      
+      @keyframes sakuraFall {
+        0% {
+          transform: translateY(-50px) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(calc(100vh + 50px)) rotate(180deg);
+          opacity: 0;
+        }
+      }
+      
+      /* Ensure animations work */
+      .petal {
+        animation-name: sakuraFall;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-play-state: running;
+      }
+      
+      /* Hero Section Styles */
+      .hero-gradient {
+        background: linear-gradient(135deg, #f8f4f0 0%, #ede3d9 100%);
+      }
+      
+      .hero-title {
+        color: #2c2c2c;
+      }
+      
+      .hero-subtitle-2 {
+        color: #8b7355;
+      }
+      
+      .hero-description {
+        color: #5a5a5a;
+      }
+      
+      .japanese-character {
+        color: #8b7355;
+      }
+      
+      /* Product Showcase */
+      .product-showcase {
+        position: relative;
+      }
+      
+      .main-product {
+        width: 18rem;
+        margin: 0 auto;
+        position: relative;
+        z-index: 20;
+        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+      }
+      
+      @media (min-width: 768px) {
+        .main-product {
+          width: 22rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .main-product {
+          width: 24rem;
+        }
+      }
+      
+      .glow-effect {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255, 182, 193, 0.2) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: glow 4s ease-in-out infinite alternate;
+      }
+      
+      @keyframes glow {
+        0% {
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+      
+      /* Container */
+      .container {
+        max-width: 1200px;
+      }
+      
+      /* Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      @media (min-width: 768px) {
+        .md\\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .lg\\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      
+      /* Text Align - Mobile First */
+      .text-left {
+        text-align: center;
+      }
+      
+      @media (min-width: 1024px) {
+        .text-left {
+          text-align: left;
+        }
+      }
+      
+      /* Font Sizes - Mobile First */
+      .text-6xl {
+        font-size: 2.5rem;
+        line-height: 1.1;
+      }
+      
+      .text-2xl {
+        font-size: 1.25rem;
+      }
+      
+      .text-4xl {
+        font-size: 1.75rem;
+      }
+      
+      /* Tablet ve Desktop için büyük fontlar */
+      @media (min-width: 768px) {
+        .text-6xl {
+          font-size: 3.75rem;
+        }
+        
+        .text-2xl {
+          font-size: 1.5rem;
+        }
+        
+        .text-4xl {
+          font-size: 2.25rem;
+        }
+      }
+      
+      /* Margins */
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+      
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+      
+      /* Padding - Mobile First */
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      
+      @media (min-width: 1024px) {
+        .lg\\:px-6 {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+      
+      /* Border */
+      .border-2 {
+        border-width: 2px;
+      }
+      
+      .border-gray-800 {
+        border-color: #1f2937;
+      }
+      
+      .text-gray-800 {
+        color: #1f2937;
+      }
+      
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      
+      /* Flexbox - Mobile First */
+      .flex-col {
+        flex-direction: column;
+      }
+      
+      .justify-center {
+        justify-content: center;
+      }
+      
+      .gap-4 {
+        gap: 1rem;
+      }
+      
+      .gap-8 {
+        gap: 2rem;
+      }
+      
+      .gap-12 {
+        gap: 2rem;
+      }
+      
+      @media (min-width: 640px) {
+        .sm\\:flex-row {
+          flex-direction: row;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .gap-12 {
+          gap: 3rem;
+        }
+        
+        .lg\\:gap-12 {
+          gap: 3rem;
+        }
+        
+        .lg\\:justify-start {
+          justify-content: flex-start;
+        }
+      }
+      
+      /* Position */
+      .relative {
+        position: relative;
+      }
+      
+      .absolute {
+        position: absolute;
+      }
+      
+      .top-10 {
+        top: 1rem;
+      }
+      
+      .right-10 {
+        right: 1rem;
+      }
+      
+      @media (min-width: 768px) {
+        .top-10 {
+          top: 2.5rem;
+        }
+        
+        .right-10 {
+          right: 2.5rem;
+        }
+      }
+      
+      /* Z-index */
+      .z-10 {
+        z-index: 10;
+      }
+      
+      .z-20 {
+        z-index: 20;
+      }
+      
+      .z-30 {
+        z-index: 30;
+      }
+      
+      /* Opacity */
+      .opacity-10 {
+        opacity: 0.1;
+      }
+      
+      /* Font styles */
+      .italic {
+        font-style: italic;
+      }
+      
+      /* Additional Classes */
+      .space-y-4 > * + * {
+        margin-top: 1rem;
+      }
+      
+      .mt-8 {
+        margin-top: 2rem;
+      }
+      
+      .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      @media (min-width: 640px) {
+        .grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      
+      .p-4 {
+        padding: 1rem;
+      }
+      
+      .text-4xl {
+        font-size: 2.25rem;
+      }
+      
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      
+      .shadow-xl {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      
+      .top-4 {
+        top: 1rem;
+      }
+      
+      .left-4 {
+        left: 1rem;
+      }
+      
+      .bg-opacity-90 {
+        background-opacity: 0.9;
+      }
+      
+      .p-3 {
+        padding: 0.75rem;
+      }
+      
+      .text-xs {
+        font-size: 0.75rem;
+      }
 
-    <!-- Logo -->
-    <header class="absolute top-0 left-0 m-4 z-50">
-      <img src="ashairnets.com/img/logo.png" alt="AS Hairnet Logo" style="width: 100px;" />
-    </header>
+    .logo-header {
+      width: 100px;
+    }
 
-    <!-- Hero -->
-    <section
-      class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-center"
-      style="background-image: url('ashairnets.com/img/hero.jpg');"
-    >
-      <h1 class="text-5xl font-bold font-brand" data-splitting>As Hairnet</h1>
-      <p class="mt-4 text-xl">Refined Beauty Inspired by Nature</p>
-      <a href="#about" class="mt-6 px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition">Learn More</a>
-    </section>
+    .hero-bg {
+      background-image: url('img/bg.jpg');
+    }
 
-    <!-- About -->
-    <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4 font-brand" data-splitting>About As Hairnet</h2>
-      <p class="text-lg leading-relaxed">
-        Inspired by the elegance of Japanese aesthetics and botanical tradition, As Hairnet combines quality materials with thoughtful design.
-      </p>
-    </section>
+    /* Additional responsive and utility styles */
+         .h-screen {
+       height: auto;
+       min-height: 100vh;
+     }
+     
+     @media (min-width: 768px) {
+       .h-screen {
+         height: 100vh;
+       }
+     }
 
-    <!-- Gallery -->
-    <section class="bg-gray-100 py-20 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center font-brand" data-splitting>Gallery</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <img src="ashairnets.com/img/gallery1.jpg" class="rounded shadow-lg" alt="Bottle" />
-          <img src="ashairnets.com/img/gallery2.jpg" class="rounded shadow-lg" alt="Ingredients" />
-          <img src="ashairnets.com/img/gallery3.jpg" class="rounded shadow-lg" alt="Serving" />
+    .bg-cover {
+      background-size: cover;
+    }
+
+    .bg-center {
+      background-position: center;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .m-4 {
+      margin: 1rem;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .font-bold {
+      font-weight: bold;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .bg-black {
+      background-color: #000;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .rounded {
+      border-radius: 0.25rem;
+    }
+
+    .transition {
+      transition: all 0.3s ease;
+    }
+
+    .hover\:bg-gray-800:hover {
+      background-color: #374151;
+    }
+
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .max-w-4xl {
+      max-width: 56rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+
+    .bg-gray-100 {
+      background-color: #f3f4f6;
+    }
+
+    .max-w-6xl {
+      max-width: 72rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .bg-gray-900 {
+      background-color: #111827;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 768px) {
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black font-sans">
+
+  <!-- Logo -->
+  <header class="absolute top-0 left-0 m-4 z-50">
+    <img src="img/logo_small.png" alt="AS Hairnet Logo" class="logo-header">
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient">
+    <!-- Uçan Sakura Yaprakları -->
+    <div class="floating-petals">
+      <div class="petal petal-1"></div>
+      <div class="petal petal-2"></div>
+      <div class="petal petal-3"></div>
+      <div class="petal petal-4"></div>
+      <div class="petal petal-5"></div>
+      <div class="petal petal-6"></div>
+      <div class="petal petal-7"></div>
+      <div class="petal petal-8"></div>
+      <div class="petal petal-9"></div>
+      <div class="petal petal-10"></div>
+    </div>
+
+    <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20">
+      <!-- Sol Taraf - Content -->
+      <div class="text-left">
+        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting>
+          As Hairnet
+        </h1>
+        <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2">
+          Modern Yaşamın Şık Çözümü
+        </h2>
+        <p class="hero-subtitle text-lg mb-8 leading-relaxed hero-description">
+          130 yıllık geleneksel el sanatı tecrübesi ile modern tasarımı birleştiren As Hairnet,
+          günlük hayatınızda konfor ve şıklığı bir arada sunar.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#about" class="hero-button px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition">
+            Keşfet
+          </a>
+          <a href="#gallery" class="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition">
+            Galeri
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- Buy -->
-    <section class="py-20 px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6 font-brand" data-splitting>Buy Now</h2>
-      <a
-        href="https://ashairnet.com/shop"
-        class="inline-block px-8 py-4 bg-black text-white font-semibold rounded hover:bg-gray-800 transition"
-      >Shop Now</a>
-    </section>
+      <!-- Sağ Taraf - Product Image -->
+      <div class="relative">
+        <div class="product-showcase relative">
+          <img src="img/sakari-gin-bottle.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20">
+          <div class="glow-effect"></div>
+          <!-- Japonca Karakter -->
+          <div class="japanese-text absolute top-10 right-10 text-6xl font-bold opacity-10 japanese-character">
+            髪
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 text-center text-white">
-      <p class="text-sm">&copy; 2025 As Hairnet. All rights reserved.</p>
-    </footer>
+  <!-- About -->
+  <section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+             <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 font-brand hero-title" data-splitting>Hakkımızda</h2>
+          <div class="space-y-4">
+                         <p class="text-lg leading-relaxed hero-description">
+               As Hairnet, 130 yıllık Japon el sanatı geleneğinden ilham alarak modern yaşamın
+               ihtiyaçlarına uygun saç fileleri tasarlar.
+             </p>
+             <p class="text-lg leading-relaxed hero-description">
+               Geleneksel Nihonsakari felsefesini benimseyen markamız, kalite öncelikli üretim
+               anlayışı ile her ürününde mükemmelliği hedefler.
+             </p>
+          </div>
+          <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+            <div class="p-4">
+              <h4 class="font-bold text-2xl hero-title">130+</h4>
+              <p class="text-sm hero-subtitle-2">Yıllık Gelenek</p>
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-2xl hero-title">100%</h4>
+              <p class="text-sm hero-subtitle-2">El Yapımı</p>
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-2xl hero-title">Premium</h4>
+              <p class="text-sm hero-subtitle-2">Kalite</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="img/sakari-gin_shukugawa-river.jpg" alt="Shukugawa River" class="gallery-image rounded-lg shadow-xl">
+          <div class="absolute top-4 left-4 bg-white bg-opacity-90 p-3 rounded">
+            <p class="text-2xl font-bold japanese-character">品質</p>
+            <p class="text-xs hero-subtitle-2">Kalite</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Vendor JS -->
-    <script src="ashairnets.com/js/vendor/jquery.easing.1.3.js" crossorigin="anonymous"></script>
-    <script src="ashairnets.com/js/vendor/jquery.waitforimages.min.js" crossorigin="anonymous"></script>
-    <script src="ashairnets.com/js/vendor/velocity.min.js" crossorigin="anonymous"></script>
-    <script src="ashairnets.com/js/vendor/velocity.ui.js" crossorigin="anonymous"></script>
-    <script src="ashairnets.com/js/vendor/jquery.waypoints.min.js" crossorigin="anonymous"></script>
-    <script src="ashairnets.com/js/vendor/splitting/splitting.min.js" crossorigin="anonymous"></script>
+  <!-- Gallery -->
+  <section class="bg-gray-100 py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 text-center font-brand" data-splitting>Gallery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="img/sakari-gin-bottle.png" class="gallery-image rounded shadow-lg" alt="Bottle">
+        <img src="img/botanics-img.png" class="gallery-image rounded shadow-lg" alt="Ingredients">
+        <img src="img/sakari-gin_barrel_mood.jpg" class="gallery-image rounded shadow-lg" alt="Serving">
+      </div>
+    </div>
+  </section>
 
-    <!-- Başlatıcı -->
+  <!-- Buy -->
+  <section class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6 font-brand" data-splitting>Buy Now</h2>
+    <a href="https://ashairnet.com/shop"
+      class="inline-block px-8 py-4 bg-black text-white font-semibold rounded hover:bg-gray-800 transition">Shop Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8 text-center text-white">
+    <p class="text-sm">&copy; 2025 As Hairnet. All rights reserved.</p>
+  </footer>
+
+      <!-- Vendor JS -->
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="../s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/splitting/splitting.min.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/jquery.easing.1.3.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/jquery.waitforimages.min.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/velocity.min.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/velocity.ui.js" crossorigin="anonymous"></script>
+    <script src="js/vendor/jquery.waypoints.min.js" crossorigin="anonymous"></script>
+
+      <!-- Başlatıcı -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // GSAP Kayıt
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        
+        // Splitting.js başlatma
         Splitting();
+        
+        // Sakura petals - CSS animasyonlarını başlat
+        const petals = document.querySelectorAll('.petal');
+        console.log('🌸 Sakura petals found:', petals.length);
+        
+        petals.forEach((petal, index) => {
+          // CSS animasyonlarını zorla başlat
+          petal.style.animationPlayState = 'running';
+          
+          // Random scale sadece - left pozisyonunu CSS'e bırak
+          const randomScale = 0.8 + Math.random() * 0.4;
+          petal.style.transform = `scale(${randomScale})`;
+          
+          console.log(`Petal ${index + 1}: scale ${randomScale}, animation: ${petal.style.animationDuration || 'default'}`);
+          
+          // Animasyon bitince yeniden başlat
+          petal.addEventListener('animationend', function() {
+            const newScale = 0.8 + Math.random() * 0.4;
+            this.style.transform = `scale(${newScale})`;
+            console.log(`Petal ${index + 1} restarted with scale ${newScale}`);
+          });
+        });
+        
+        // Hero başlık animasyonu
+        gsap.from("[data-splitting] .char", {
+          opacity: 0,
+          y: 100,
+          rotateX: -90,
+          stagger: 0.02,
+          duration: 1,
+          ease: "back.out(1.7)",
+          delay: 0.5
+        });
+        
+        // Hero alt yazı animasyonu
+        gsap.from(".hero-subtitle-2, .hero-description", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          stagger: 0.2,
+          delay: 1.5,
+          ease: "power2.out"
+        });
+        
+        // Hero buton animasyonu
+        gsap.from(".hero-button", {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.8,
+          delay: 2,
+          ease: "back.out(1.7)"
+        });
+        
+        // Scroll-triggered animasyonlar
+        gsap.utils.toArray("section").forEach((section, i) => {
+          if (i > 0) { // İlk section'ı atla (hero)
+            gsap.from(section.children, {
+              opacity: 0,
+              y: 100,
+              duration: 1,
+              stagger: 0.2,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+              }
+            });
+          }
+        });
+        
+        // Gallery resim animasyonları
+        gsap.utils.toArray(".gallery-image").forEach((img, i) => {
+          gsap.from(img, {
+            opacity: 0,
+            scale: 0.8,
+            y: 50,
+            duration: 0.8,
+            delay: i * 0.2,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: img,
+              start: "top 80%",
+              toggleActions: "play none none reverse"
+            }
+          });
+        });
+        
+        // Paralaks efekt
+        gsap.to(".hero-bg", {
+          yPercent: -50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+        
+        // Logo hover animasyonu
+        const logo = document.querySelector(".logo-header");
+        if (logo) {
+          logo.addEventListener("mouseenter", () => {
+            gsap.to(logo, {scale: 1.1, duration: 0.3, ease: "power2.out"});
+          });
+          logo.addEventListener("mouseleave", () => {
+            gsap.to(logo, {scale: 1, duration: 0.3, ease: "power2.out"});
+          });
+        }
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              gsap.to(window, {
+                duration: 1.5,
+                scrollTo: target,
+                ease: "power2.inOut"
+              });
+            }
+          });
+        });
+        
+        // Button hover effects
+        document.querySelectorAll('.hover\\:bg-gray-800').forEach(btn => {
+          btn.addEventListener('mouseenter', () => {
+            gsap.to(btn, {scale: 1.05, duration: 0.3, ease: "power2.out"});
+          });
+          btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {scale: 1, duration: 0.3, ease: "power2.out"});
+          });
+        });
+        
+        // Text animasyonları için Intersection Observer
+        const animateElements = document.querySelectorAll('[data-splitting]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const chars = entry.target.querySelectorAll('.char');
+              gsap.from(chars, {
+                opacity: 0,
+                y: 100,
+                rotateX: -90,
+                stagger: 0.02,
+                duration: 1,
+                ease: "back.out(1.7)"
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        animateElements.forEach(el => {
+          if (!el.closest('.hero-section')) { // Hero'daki elementi hariç tut
+            observer.observe(el);
+          }
+        });
       });
     </script>
 
-  </body>
+</body>
+
 </html>
