@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Mirador-SemiBold';
+    src: url('Mirador-SemiBold.woff2') format('woff2'),
+        url('Mirador-SemiBold.woff') format('woff'),
+        url('Mirador-SemiBold.ttf') format('truetype'),
+        url('Mirador-SemiBold.svg#Mirador-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('Roboto-Regular.woff2') format('woff2'),
+        url('Roboto-Regular.woff') format('woff'),
+        url('Roboto-Regular.ttf') format('truetype'),
+        url('Roboto-Regular.svg#Roboto-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('Roboto-Bold.woff2') format('woff2'),
+        url('Roboto-Bold.woff') format('woff'),
+        url('Roboto-Bold.ttf') format('truetype'),
+        url('Roboto-Bold.svg#Roboto-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('Roboto-Medium.woff2') format('woff2'),
+        url('Roboto-Medium.woff') format('woff'),
+        url('Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mirador-BookItalic';
+    src: url('Mirador-BookItalic.woff2') format('woff2'),
+        url('Mirador-BookItalic.woff') format('woff'),
+        url('Mirador-BookItalic.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Mirador-Medium';
+    src: url('Mirador-Medium.woff2') format('woff2'),
+        url('Mirador-Medium.woff') format('woff'),
+        url('Mirador-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon4292.eot?i6x4gk');
+  src:  url('icomoon4292.eot?i6x4gk#iefix') format('embedded-opentype'),
+    url('icomoon4292.ttf?i6x4gk') format('truetype'),
+    url('icomoon4292.woff?i6x4gk') format('woff'),
+    url('icomoon4292.svg?i6x4gk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-LinkedIn:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-Instagram:before {
+    transition:.3s ease all;    
+  content: "\e904";
+  color: #9B9B9B;
+}
+
+
+a:hover .icon-Instagram:before {
+transition:.3s ease all;
+  color: #f7f6f6;
+}
+
+.icon-Logo-Sublimio:before {
+  content: "\e914";
+
+    transition:.3s ease all;    
+  color: #333333;
+    
+}
+a:hover .icon-Logo-Sublimio:before {
+  
+
+    transition:.3s ease all;    
+  color: #9b9b9b;
+    
+}
+
+
+.icon-Play:before {
+  content: "\e915";
+  color: #fff;
+}
+.icon-Clessidra:before {
+  content: "\e910";
+  color: #595959;
+}
+.icon-Calendario:before {
+  content: "\e911";
+  color: #595959;
+}
+.icon-Logo-air_dark:before {
+  content: "\e912";
+}
+.icon-Logo-solid_dark:before {
+  content: "\e913";
+}
+.icon-ArtDirectorv2:before {
+  content: "\e907";
+}
+.icon-Copywriterv2:before {
+  content: "\e908";
+}
+.icon-Developerv2:before {
+  content: "\e909";
+}
+.icon-Photographerv2:before {
+  content: "\e90a";
+}
+.icon-Strategistv2:before {
+  content: "\e90b";
+}
+.icon-Videomakerv2:before {
+  content: "\e90c";
+}
+.icon-Email:before {
+  content: "\e900";
+  color: #505050;
+}
+.icon-Freccetta-salterina:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-Menu-Hamburger:before {
+  content: "\e903";
+  color: #fff;
+}
