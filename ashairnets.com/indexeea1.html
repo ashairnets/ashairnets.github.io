@@ -135,57 +135,51 @@
       
 
       
+      /* Sakura yaprakları - ürün etrafında konumlandırılmış */
+      .floating-petals {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+      
       .petal {
         position: absolute;
-        width: 20px;
-        height: 20px;
-        opacity: 0.8;
-        animation: sakuraFall linear infinite;
-        transform-origin: center;
         background-image: url('img/petalo.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        filter: drop-shadow(0 1px 2px rgba(255, 182, 193, 0.3));
+        filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
+        animation: floatingPetal 6s ease-in-out infinite;
+        transform-origin: center;
       }
       
-      @media (min-width: 768px) {
-        .petal {
-          width: 28px;
-          height: 28px;
-        }
-      }
+             /* Farklı boyutlar ve pozisyonlar - Ürün kutusunun yakın çevresinde */
+       .petal-1 { width: 25px; height: 25px; top: 25%; left: 45%; z-index: 5; animation-delay: 0s; }
+       .petal-2 { width: 30px; height: 30px; top: 30%; left: 65%; z-index: 25; animation-delay: 1s; }
+       .petal-3 { width: 20px; height: 20px; top: 50%; left: 40%; z-index: 5; animation-delay: 2s; }
+       .petal-4 { width: 35px; height: 35px; top: 20%; left: 60%; z-index: 25; animation-delay: 3s; }
+       .petal-5 { width: 22px; height: 22px; top: 65%; left: 55%; z-index: 5; animation-delay: 4s; }
+       .petal-6 { width: 28px; height: 28px; top: 40%; left: 70%; z-index: 25; animation-delay: 0.5s; }
+       .petal-7 { width: 18px; height: 18px; top: 35%; left: 42%; z-index: 5; animation-delay: 1.5s; }
+       .petal-8 { width: 32px; height: 32px; top: 55%; left: 68%; z-index: 25; animation-delay: 2.5s; }
+       .petal-9 { width: 24px; height: 24px; top: 45%; left: 48%; z-index: 5; animation-delay: 3.5s; }
+       .petal-10 { width: 26px; height: 26px; top: 60%; left: 62%; z-index: 25; animation-delay: 4.5s; }
       
-      /* Individual petal base styles - JS will override positions and timings */
-      .petal-1, .petal-2, .petal-3, .petal-4, .petal-5,
-      .petal-6, .petal-7, .petal-8, .petal-9, .petal-10 { 
-        /* JavaScript will set random positions, durations, and delays */
-      }
-      
-      @keyframes sakuraFall {
-        0% {
-          transform: translateY(-50px) rotate(0deg);
-          opacity: 0;
+      @keyframes floatingPetal {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
         }
-        10% {
-          opacity: 1;
+        25% {
+          transform: translateY(-10px) rotate(5deg);
         }
-        90% {
-          opacity: 1;
+        50% {
+          transform: translateY(5px) rotate(-3deg);
         }
-        100% {
-          transform: translateY(calc(100vh + 50px)) rotate(180deg);
-          opacity: 0;
+        75% {
+          transform: translateY(-5px) rotate(2deg);
         }
-      }
-      
-      /* Ensure animations work */
-      .petal {
-        animation-name: sakuraFall;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        animation-play-state: running;
       }
       
       /* Hero Section Styles */
@@ -742,9 +736,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient">
-    <!-- Uçan Sakura Yaprakları -->
-    <div class="floating-petals" style="left: 48px; top: -175px;">
+  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient" style="top: 1px; left: 0px;">
+    <!-- Sakura Yaprakları - Ürün Etrafında -->
+    <div class="floating-petals">
       <div class="petal petal-1"></div>
       <div class="petal petal-2"></div>
       <div class="petal petal-3"></div>
@@ -759,9 +753,9 @@
 
     <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20" style="left: -23px; top: 346px;">
       <!-- Sol Taraf - Content -->
-      <div class="text-left" style="position: relative; z-index: 30; color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -249px; top: 181px;">
+      <div class="text-left" style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -170px; top: -34px;">
         <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting="" style="color: #000; text-shadow: none;">
-          As Hairnet
+          AS Hairnet
         </h1>
         <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2" style="color: #333;">
           Modern Yaşamın Şık Çözümü
@@ -770,20 +764,12 @@
           130 yıllık geleneksel el sanatı tecrübesi ile modern tasarımı birleştiren As Hairnet,
           günlük hayatınızda konfor ve şıklığı bir arada sunar.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#about" class="hero-button px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition" style="text-decoration: none; display: inline-block;">
-            Keşfet
-          </a>
-          <a href="#gallery" class="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition" style="text-decoration: none; display: inline-block;">
-            Galeri
-          </a>
-        </div>
       </div>
 
       <!-- Sağ Taraf - Product Image -->
       <div class="relative">
         <div class="product-showcase relative">
-          <img src="img/sakari-gin-bottle.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20" style="left: 272px; top: -606px;">
+          <img src="img/ashairnet_product.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20" style="left: 272px; top: -606px;">
           <div class="glow-effect"></div>
           <!-- Japonca Karakter -->
           <div class="japanese-text absolute top-10 right-10 text-6xl font-bold opacity-10 japanese-character">
@@ -874,73 +860,23 @@
         // Splitting.js başlatma
         Splitting();
         
-        // Sakura petals - Tamamen random animasyonlar
+        // Sakura yaprakları paralaks efekti
         const petals = document.querySelectorAll('.petal');
-        console.log('🌸 Sakura petals found:', petals.length);
         
-        function randomizePetal(petal, index) {
-          // Random pozisyon (5% - 95% arası)
-          const randomLeft = 5 + Math.random() * 90;
-          
-          // Random animasyon süresi (3-8 saniye arası)
-          const randomDuration = 3 + Math.random() * 5;
-          
-          // Random delay (0-3 saniye arası)
-          const randomDelay = Math.random() * 3;
-          
-          // Random scale (0.6-1.2 arası)
-          const randomScale = 0.6 + Math.random() * 0.6;
-          
-          // Random rotation hızı (90-270 derece)
-          const randomRotation = 90 + Math.random() * 180;
-          
-          // CSS animasyonunu uygula
-          petal.style.left = randomLeft + '%';
-          petal.style.animationDuration = randomDuration + 's';
-          petal.style.animationDelay = randomDelay + 's';
-          petal.style.transform = `scale(${randomScale})`;
-          
-          // Custom keyframe oluştur
-          const keyframeName = `sakuraFall${index}`;
-          const keyframes = `
-            @keyframes ${keyframeName} {
-              0% {
-                transform: translateY(-50px) rotate(0deg) scale(${randomScale});
-                opacity: 0;
-              }
-              10% {
-                opacity: 1;
-              }
-              90% {
-                opacity: 1;
-              }
-              100% {
-                transform: translateY(calc(100vh + 50px)) rotate(${randomRotation}deg) scale(${randomScale});
-                opacity: 0;
-              }
-            }
-          `;
-          
-          // Keyframe'i DOM'a ekle
-          if (!document.getElementById(`style-${index}`)) {
-            const style = document.createElement('style');
-            style.id = `style-${index}`;
-            style.textContent = keyframes;
-            document.head.appendChild(style);
-          }
-          
-          petal.style.animationName = keyframeName;
-          
-          console.log(`Petal ${index + 1}: left ${randomLeft.toFixed(1)}%, duration ${randomDuration.toFixed(1)}s, delay ${randomDelay.toFixed(1)}s, scale ${randomScale.toFixed(2)}`);
-        }
-        
+        // Yapraklar için paralaks scroll efekti
         petals.forEach((petal, index) => {
-          // İlk randomizasyon
-          randomizePetal(petal, index + 1);
+          const isBackground = petal.style.zIndex === '5';
+          const scrollSpeed = isBackground ? 0.3 : 0.7;
           
-          // Animasyon bitince yeniden randomize et
-          petal.addEventListener('animationend', function() {
-            randomizePetal(this, index + 1);
+          gsap.to(petal, {
+            y: () => -100 * scrollSpeed,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".hero-section",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1
+            }
           });
         });
         
