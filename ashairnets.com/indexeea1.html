@@ -142,56 +142,10 @@
         }
       }
       
-      /* Individual petal positions and timings */
-      .petal-1 { 
-        left: 10%; 
-        animation: sakuraFall 3s linear infinite;
-        animation-delay: 0s;
-      }
-      .petal-2 { 
-        left: 20%; 
-        animation: sakuraFall 3.5s linear infinite;
-        animation-delay: 0.2s;
-      }
-      .petal-3 { 
-        left: 30%; 
-        animation: sakuraFall 4s linear infinite;
-        animation-delay: 0.4s;
-      }
-      .petal-4 { 
-        left: 40%; 
-        animation: sakuraFall 3.2s linear infinite;
-        animation-delay: 0.6s;
-      }
-      .petal-5 { 
-        left: 50%; 
-        animation: sakuraFall 3.8s linear infinite;
-        animation-delay: 0.8s;
-      }
-      .petal-6 { 
-        left: 60%; 
-        animation: sakuraFall 4.2s linear infinite;
-        animation-delay: 1s;
-      }
-      .petal-7 { 
-        left: 70%; 
-        animation: sakuraFall 3.6s linear infinite;
-        animation-delay: 1.2s;
-      }
-      .petal-8 { 
-        left: 80%; 
-        animation: sakuraFall 4.5s linear infinite;
-        animation-delay: 1.4s;
-      }
-      .petal-9 { 
-        left: 90%; 
-        animation: sakuraFall 3.3s linear infinite;
-        animation-delay: 1.6s;
-      }
-      .petal-10 { 
-        left: 95%; 
-        animation: sakuraFall 4.1s linear infinite;
-        animation-delay: 1.8s;
+      /* Individual petal base styles - JS will override positions and timings */
+      .petal-1, .petal-2, .petal-3, .petal-4, .petal-5,
+      .petal-6, .petal-7, .petal-8, .petal-9, .petal-10 { 
+        /* JavaScript will set random positions, durations, and delays */
       }
       
       @keyframes sakuraFall {
@@ -913,25 +867,73 @@
         // Splitting.js başlatma
         Splitting();
         
-        // Sakura petals - CSS animasyonlarını başlat
+        // Sakura petals - Tamamen random animasyonlar
         const petals = document.querySelectorAll('.petal');
         console.log('🌸 Sakura petals found:', petals.length);
         
-        petals.forEach((petal, index) => {
-          // CSS animasyonlarını zorla başlat
-          petal.style.animationPlayState = 'running';
+        function randomizePetal(petal, index) {
+          // Random pozisyon (5% - 95% arası)
+          const randomLeft = 5 + Math.random() * 90;
           
-          // Random scale sadece - left pozisyonunu CSS'e bırak
-          const randomScale = 0.8 + Math.random() * 0.4;
+          // Random animasyon süresi (3-8 saniye arası)
+          const randomDuration = 3 + Math.random() * 5;
+          
+          // Random delay (0-3 saniye arası)
+          const randomDelay = Math.random() * 3;
+          
+          // Random scale (0.6-1.2 arası)
+          const randomScale = 0.6 + Math.random() * 0.6;
+          
+          // Random rotation hızı (90-270 derece)
+          const randomRotation = 90 + Math.random() * 180;
+          
+          // CSS animasyonunu uygula
+          petal.style.left = randomLeft + '%';
+          petal.style.animationDuration = randomDuration + 's';
+          petal.style.animationDelay = randomDelay + 's';
           petal.style.transform = `scale(${randomScale})`;
           
-          console.log(`Petal ${index + 1}: scale ${randomScale}, animation: ${petal.style.animationDuration || 'default'}`);
+          // Custom keyframe oluştur
+          const keyframeName = `sakuraFall${index}`;
+          const keyframes = `
+            @keyframes ${keyframeName} {
+              0% {
+                transform: translateY(-50px) rotate(0deg) scale(${randomScale});
+                opacity: 0;
+              }
+              10% {
+                opacity: 1;
+              }
+              90% {
+                opacity: 1;
+              }
+              100% {
+                transform: translateY(calc(100vh + 50px)) rotate(${randomRotation}deg) scale(${randomScale});
+                opacity: 0;
+              }
+            }
+          `;
           
-          // Animasyon bitince yeniden başlat
+          // Keyframe'i DOM'a ekle
+          if (!document.getElementById(`style-${index}`)) {
+            const style = document.createElement('style');
+            style.id = `style-${index}`;
+            style.textContent = keyframes;
+            document.head.appendChild(style);
+          }
+          
+          petal.style.animationName = keyframeName;
+          
+          console.log(`Petal ${index + 1}: left ${randomLeft.toFixed(1)}%, duration ${randomDuration.toFixed(1)}s, delay ${randomDelay.toFixed(1)}s, scale ${randomScale.toFixed(2)}`);
+        }
+        
+        petals.forEach((petal, index) => {
+          // İlk randomizasyon
+          randomizePetal(petal, index + 1);
+          
+          // Animasyon bitince yeniden randomize et
           petal.addEventListener('animationend', function() {
-            const newScale = 0.8 + Math.random() * 0.4;
-            this.style.transform = `scale(${newScale})`;
-            console.log(`Petal ${index + 1} restarted with scale ${newScale}`);
+            randomizePetal(this, index + 1);
           });
         });
         
