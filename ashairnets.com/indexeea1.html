@@ -742,9 +742,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient">
+  <section class="hero-section h-screen flex items-center justify-center relative overflow-hidden">
     <!-- Uçan Sakura Yaprakları -->
-    <div class="floating-petals" style="left: 48px; top: -175px;">
+    <div class="floating-petals">
       <div class="petal petal-1"></div>
       <div class="petal petal-2"></div>
       <div class="petal petal-3"></div>
@@ -756,40 +756,25 @@
       <div class="petal petal-9"></div>
       <div class="petal petal-10"></div>
     </div>
-
-    <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20" style="left: -23px; top: 346px;">
-      <!-- Sol Taraf - Content -->
-      <div class="text-left" style="position: relative; z-index: 30; color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -249px; top: 181px;">
-        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting="" style="color: #000; text-shadow: none;">
-          As Hairnet
-        </h1>
-        <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2" style="color: #333;">
-          Modern Yaşamın Şık Çözümü
-        </h2>
-        <p class="hero-subtitle text-lg mb-8 leading-relaxed hero-description" style="color: #555; font-size: 1.1rem; line-height: 1.6;">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center relative z-20">
+      <!-- Sol: Metin -->
+      <div class="text-left bg-white bg-opacity-80 p-8 rounded-lg shadow-lg" style="z-index:30;">
+        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting>As Hairnet</h1>
+        <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2">Modern Yaşamın Şık Çözümü</h2>
+        <p class="hero-subtitle text-lg mb-8 leading-relaxed hero-description">
           130 yıllık geleneksel el sanatı tecrübesi ile modern tasarımı birleştiren As Hairnet,
           günlük hayatınızda konfor ve şıklığı bir arada sunar.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#about" class="hero-button px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition" style="text-decoration: none; display: inline-block;">
-            Keşfet
-          </a>
-          <a href="#gallery" class="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition" style="text-decoration: none; display: inline-block;">
-            Galeri
-          </a>
+          <a href="#about" class="hero-button px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition">Keşfet</a>
+          <a href="#gallery" class="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition">Galeri</a>
         </div>
       </div>
-
-      <!-- Sağ Taraf - Product Image -->
-      <div class="relative">
-        <div class="product-showcase relative">
-          <img src="img/sakari-gin-bottle.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20" style="left: 272px; top: -606px;">
-          <div class="glow-effect"></div>
-          <!-- Japonca Karakter -->
-          <div class="japanese-text absolute top-10 right-10 text-6xl font-bold opacity-10 japanese-character">
-            髪
-          </div>
-        </div>
+      <!-- Sağ: Ürün -->
+      <div class="relative flex justify-center items-center">
+        <img src="img/sakari-gin-bottle.png" alt="As Hairnet Product" class="main-product relative z-20" style="max-width:350px;">
+        <div class="glow-effect"></div>
+        <div class="japanese-text absolute top-10 right-10 text-6xl font-bold opacity-10 japanese-character">髪</div>
       </div>
     </div>
   </section>
