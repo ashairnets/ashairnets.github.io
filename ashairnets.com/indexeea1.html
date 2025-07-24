@@ -20,28 +20,29 @@
       overflow-x: hidden !important;
       overflow-y: visible !important;
     }
-    
+
     /* Ensure wrap doesn't hide content */
     #wrap {
       overflow: visible !important;
       overflow-x: hidden !important;
       overflow-y: visible !important;
     }
-    
+
     /* Global Reset for full coverage */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
-    html, body {
+
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
     }
-    
+
     .font-brand {
       font-family: 'Playfair Display', serif;
     }
@@ -54,479 +55,591 @@
       color: #000;
     }
 
-          .font-sans { 
-        font-family: system-ui, -apple-system, sans-serif; 
-      }
-      
-      /* Animasyon iyileştirmeleri */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      body {
-        overflow-x: hidden;
-      }
-      
-      /* Hero Section Responsive */
-      .hero-section {
-        min-height: 100vh;
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        top: 0;
-        left: 0;
-      }
-      
-      @media (min-width: 768px) {
-        .hero-section {
-          padding: 0;
-        }
-      }
-      
-      /* Text splitting için */
-      .char {
-        display: inline-block;
-        transform-origin: 50% 100%;
-      }
-      
-      /* Hero paralaks için */
-      .hero-bg {
-        will-change: transform;
-      }
-      
-      /* Gallery resimler için hover efekt */
-      .gallery-image {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      }
-      
-      .gallery-image:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      }
-      
-      /* Logo için transition */
-      .logo-header {
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-      
-      /* Button hover iyileştirmeleri */
-      .hero-button,
-      .hover\\:bg-gray-800 {
-        position: relative;
-        overflow: hidden;
-      }
-      
-      /* Scroll animasyonları için initial state */
-      section > * {
-        will-change: transform, opacity;
-      }
-      
-      /* Performance optimizations */
-      * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      
-      /* Wave animations için (gelecekte eklenebilir) */
-      .wave {
-        animation: wave 6s ease-in-out infinite;
-      }
-      
-      @keyframes wave {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-      
-      /* Sakura Petals - Uçan Yapraklar */
-      .floating-petals {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 1;
-      }
-      
+    .font-sans {
+      font-family: system-ui, -apple-system, sans-serif;
+    }
 
-      
-      /* Sakura yaprakları - ürün etrafında konumlandırılmış */
-      .floating-petals {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 10;
+    /* Animasyon iyileştirmeleri */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Hero Section Responsive */
+    .hero-section {
+      min-height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        padding: 0;
       }
-      
-      .petal {
-        position: absolute;
-        background-image: url('img/petalo.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
-        animation: floatingPetal 6s ease-in-out infinite;
-        transform-origin: center;
+    }
+
+    /* Text splitting için */
+    .char {
+      display: inline-block;
+      transform-origin: 50% 100%;
+    }
+
+    /* Hero paralaks için */
+    .hero-bg {
+      will-change: transform;
+    }
+
+    /* Gallery resimler için hover efekt */
+    .gallery-image {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-image:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Logo için transition */
+    .logo-header {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Button hover iyileştirmeleri */
+    .hero-button,
+    .hover\\:bg-gray-800 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Scroll animasyonları için initial state */
+    section>* {
+      will-change: transform, opacity;
+    }
+
+    /* Performance optimizations */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Wave animations için (gelecekte eklenebilir) */
+    .wave {
+      animation: wave 6s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+
+      0%,
+      100% {
+        transform: translateY(0px);
       }
-      
-             /* Organik petal konumları - Görseldeki gibi doğal yerleşim */
-       .petal-1 { width: 24px; height: 24px; top: 15%; left: 35%; z-index: 15; animation-delay: 0s; transform: rotate(-25deg); opacity: 0.9; }
-       .petal-2 { width: 32px; height: 32px; top: 28%; left: 75%; z-index: 25; animation-delay: 1s; transform: rotate(95deg); opacity: 0.85; }
-       .petal-3 { width: 18px; height: 18px; top: 60%; left: 25%; z-index: 8; animation-delay: 2s; transform: rotate(-140deg); opacity: 0.7; }
-       .petal-4 { width: 28px; height: 28px; top: 20%; left: 65%; z-index: 20; animation-delay: 3s; transform: rotate(55deg); opacity: 0.8; }
-       .petal-5 { width: 22px; height: 22px; top: 70%; left: 80%; z-index: 12; animation-delay: 4s; transform: rotate(-85deg); opacity: 0.6; }
-       .petal-6 { width: 30px; height: 30px; top: 45%; left: 15%; z-index: 18; animation-delay: 0.5s; transform: rotate(125deg); opacity: 0.75; }
-       .petal-7 { width: 20px; height: 20px; top: 35%; left: 85%; z-index: 10; animation-delay: 1.5s; transform: rotate(-45deg); opacity: 0.65; }
-       .petal-8 { width: 26px; height: 26px; top: 12%; left: 50%; z-index: 22; animation-delay: 2.5s; transform: rotate(175deg); opacity: 0.9; }
-       .petal-9 { width: 34px; height: 34px; top: 55%; left: 55%; z-index: 28; animation-delay: 3.5s; transform: rotate(-105deg); opacity: 0.85; }
-       .petal-10 { width: 16px; height: 16px; top: 75%; left: 40%; z-index: 5; animation-delay: 4.5s; transform: rotate(85deg); opacity: 0.6; }
-      
-      @keyframes floatingPetal {
-        0%, 100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        25% {
-          transform: translateY(-10px) rotate(5deg);
-        }
-        50% {
-          transform: translateY(5px) rotate(-3deg);
-        }
-        75% {
-          transform: translateY(-5px) rotate(2deg);
-        }
+
+      50% {
+        transform: translateY(-20px);
       }
-      
-      /* Hero Section Styles */
-      .hero-gradient {
-        background: linear-gradient(135deg, #f8f4f0 0%, #ede3d9 100%);
+    }
+
+    /* Sakura Petals - Uçan Yapraklar */
+    .floating-petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+
+
+    /* Sakura yaprakları - ürün etrafında konumlandırılmış */
+    .floating-petals {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .petal {
+      position: absolute;
+      background-image: url('img/petalo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
+      animation: floatingPetal 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* Organik petal konumları - Görseldeki gibi doğal yerleşim */
+    .petal-1 {
+      width: 24px;
+      height: 24px;
+      top: 15%;
+      left: 35%;
+      z-index: 15;
+      animation-delay: 0s;
+      transform: rotate(-25deg);
+      opacity: 0.9;
+    }
+
+    .petal-2 {
+      width: 32px;
+      height: 32px;
+      top: 28%;
+      left: 75%;
+      z-index: 25;
+      animation-delay: 1s;
+      transform: rotate(95deg);
+      opacity: 0.85;
+    }
+
+    .petal-3 {
+      width: 18px;
+      height: 18px;
+      top: 60%;
+      left: 25%;
+      z-index: 8;
+      animation-delay: 2s;
+      transform: rotate(-140deg);
+      opacity: 0.7;
+    }
+
+    .petal-4 {
+      width: 28px;
+      height: 28px;
+      top: 20%;
+      left: 65%;
+      z-index: 20;
+      animation-delay: 3s;
+      transform: rotate(55deg);
+      opacity: 0.8;
+    }
+
+    .petal-5 {
+      width: 22px;
+      height: 22px;
+      top: 70%;
+      left: 80%;
+      z-index: 12;
+      animation-delay: 4s;
+      transform: rotate(-85deg);
+      opacity: 0.6;
+    }
+
+    .petal-6 {
+      width: 30px;
+      height: 30px;
+      top: 45%;
+      left: 15%;
+      z-index: 18;
+      animation-delay: 0.5s;
+      transform: rotate(125deg);
+      opacity: 0.75;
+    }
+
+    .petal-7 {
+      width: 20px;
+      height: 20px;
+      top: 35%;
+      left: 85%;
+      z-index: 10;
+      animation-delay: 1.5s;
+      transform: rotate(-45deg);
+      opacity: 0.65;
+    }
+
+    .petal-8 {
+      width: 26px;
+      height: 26px;
+      top: 12%;
+      left: 50%;
+      z-index: 22;
+      animation-delay: 2.5s;
+      transform: rotate(175deg);
+      opacity: 0.9;
+    }
+
+    .petal-9 {
+      width: 34px;
+      height: 34px;
+      top: 55%;
+      left: 55%;
+      z-index: 28;
+      animation-delay: 3.5s;
+      transform: rotate(-105deg);
+      opacity: 0.85;
+    }
+
+    .petal-10 {
+      width: 16px;
+      height: 16px;
+      top: 75%;
+      left: 40%;
+      z-index: 5;
+      animation-delay: 4.5s;
+      transform: rotate(85deg);
+      opacity: 0.6;
+    }
+
+    @keyframes floatingPetal {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
       }
-      
-      .hero-title {
-        color: #2c2c2c;
+
+      25% {
+        transform: translateY(-10px) rotate(5deg);
       }
-      
-      .hero-subtitle-2 {
-        color: #8b7355;
+
+      50% {
+        transform: translateY(5px) rotate(-3deg);
       }
-      
-      .hero-description {
-        color: #5a5a5a;
+
+      75% {
+        transform: translateY(-5px) rotate(2deg);
       }
-      
-      .japanese-character {
-        color: #8b7355;
-      }
-      
-      /* Product Showcase */
-      .product-showcase {
-        position: relative;
-      }
-      
+    }
+
+    /* Hero Section Styles */
+    .hero-gradient {
+      background: linear-gradient(135deg, #f8f4f0 0%, #ede3d9 100%);
+    }
+
+    .hero-title {
+      color: #2c2c2c;
+    }
+
+    .hero-subtitle-2 {
+      color: #8b7355;
+    }
+
+    .hero-description {
+      color: #5a5a5a;
+    }
+
+    .japanese-character {
+      color: #8b7355;
+    }
+
+    /* Product Showcase */
+    .product-showcase {
+      position: relative;
+    }
+
+    .main-product {
+      width: 18rem;
+      margin: 0 auto;
+      position: relative;
+      z-index: 20;
+      filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+    }
+
+    @media (min-width: 768px) {
       .main-product {
-        width: 18rem;
-        margin: 0 auto;
-        position: relative;
-        z-index: 20;
-        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+        width: 22rem;
       }
-      
-      @media (min-width: 768px) {
-        .main-product {
-          width: 22rem;
-        }
+    }
+
+    @media (min-width: 1024px) {
+      .main-product {
+        width: 24rem;
       }
-      
-      @media (min-width: 1024px) {
-        .main-product {
-          width: 24rem;
-        }
+    }
+
+    .glow-effect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 182, 193, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
       }
-      
-      .glow-effect {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(255, 182, 193, 0.2) 0%, transparent 70%);
-        border-radius: 50%;
-        animation: glow 4s ease-in-out infinite alternate;
+
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
       }
-      
-      @keyframes glow {
-        0% {
-          opacity: 0.5;
-          transform: translate(-50%, -50%) scale(1);
-        }
-        100% {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-      }
-      
-      /* Container */
-      .container {
-        max-width: 1200px;
-      }
-      
-      /* Grid */
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      @media (min-width: 768px) {
-        .md\\:grid-cols-2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      
-      @media (min-width: 1024px) {
-        .lg\\:grid-cols-2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      
-      /* Text Align - Mobile First */
-      .text-left {
-        text-align: center;
-      }
-      
-      @media (min-width: 1024px) {
-        .text-left {
-          text-align: left;
-        }
-      }
-      
-      /* Font Sizes - Mobile First */
-      .text-6xl {
-        font-size: 2.5rem;
-        line-height: 1.1;
-      }
-      
-      .text-2xl {
-        font-size: 1.25rem;
-      }
-      
-      .text-4xl {
-        font-size: 1.75rem;
-      }
-      
-      /* Tablet ve Desktop için büyük fontlar */
-      @media (min-width: 768px) {
-        .text-6xl {
-          font-size: 3.75rem;
-        }
-        
-        .text-2xl {
-          font-size: 1.5rem;
-        }
-        
-        .text-4xl {
-          font-size: 2.25rem;
-        }
-      }
-      
-      /* Margins */
-      .mb-4 {
-        margin-bottom: 1rem;
-      }
-      
-      .mb-6 {
-        margin-bottom: 1.5rem;
-      }
-      
-      .mb-8 {
-        margin-bottom: 2rem;
-      }
-      
-      /* Padding - Mobile First */
-      .px-4 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      
-      .px-8 {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      
-      @media (min-width: 1024px) {
-        .lg\\:px-6 {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-        }
-      }
-      
-      /* Border */
-      .border-2 {
-        border-width: 2px;
-      }
-      
-      .border-gray-800 {
-        border-color: #1f2937;
-      }
-      
-      .text-gray-800 {
-        color: #1f2937;
-      }
-      
-      .rounded-full {
-        border-radius: 9999px;
-      }
-      
-      /* Flexbox - Mobile First */
-      .flex-col {
-        flex-direction: column;
-      }
-      
-      .justify-center {
-        justify-content: center;
-      }
-      
-      .gap-4 {
-        gap: 1rem;
-      }
-      
-      .gap-8 {
-        gap: 2rem;
-      }
-      
-      .gap-12 {
-        gap: 2rem;
-      }
-      
-      @media (min-width: 640px) {
-        .sm\\:flex-row {
-          flex-direction: row;
-        }
-      }
-      
-      @media (min-width: 1024px) {
-        .gap-12 {
-          gap: 3rem;
-        }
-        
-        .lg\\:gap-12 {
-          gap: 3rem;
-        }
-        
-        .lg\\:justify-start {
-          justify-content: flex-start;
-        }
-      }
-      
-      /* Position */
-      .relative {
-        position: relative;
-      }
-      
-      .absolute {
-        position: absolute;
-      }
-      
-      .top-10 {
-        top: 1rem;
-      }
-      
-      .right-10 {
-        right: 1rem;
-      }
-      
-      @media (min-width: 768px) {
-        .top-10 {
-          top: 2.5rem;
-        }
-        
-        .right-10 {
-          right: 2.5rem;
-        }
-      }
-      
-      /* Z-index */
-      .z-10 {
-        z-index: 10;
-      }
-      
-      .z-20 {
-        z-index: 20;
-      }
-      
-      .z-30 {
-        z-index: 30;
-      }
-      
-      /* Opacity */
-      .opacity-10 {
-        opacity: 0.1;
-      }
-      
-      /* Font styles */
-      .italic {
-        font-style: italic;
-      }
-      
-      /* Additional Classes */
-      .space-y-4 > * + * {
-        margin-top: 1rem;
-      }
-      
-      .mt-8 {
-        margin-top: 2rem;
-      }
-      
-      .grid-cols-3 {
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .md\\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      
-      @media (min-width: 640px) {
-        .grid-cols-3 {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      
-      .p-4 {
-        padding: 1rem;
+    }
+
+    /* Text Align - Mobile First */
+    .text-left {
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .text-left {
+        text-align: left;
       }
-      
+    }
+
+    /* Font Sizes - Mobile First */
+    .text-6xl {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+
+    .text-2xl {
+      font-size: 1.25rem;
+    }
+
+    .text-4xl {
+      font-size: 1.75rem;
+    }
+
+    /* Tablet ve Desktop için büyük fontlar */
+    @media (min-width: 768px) {
+      .text-6xl {
+        font-size: 3.75rem;
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+
       .text-4xl {
         font-size: 2.25rem;
       }
-      
-      .rounded-lg {
-        border-radius: 0.5rem;
+    }
+
+    /* Margins */
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    /* Padding - Mobile First */
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .lg\\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
-      
-      .shadow-xl {
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Border */
+    .border-2 {
+      border-width: 2px;
+    }
+
+    .border-gray-800 {
+      border-color: #1f2937;
+    }
+
+    .text-gray-800 {
+      color: #1f2937;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    /* Flexbox - Mobile First */
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .gap-12 {
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .sm\\:flex-row {
+        flex-direction: row;
       }
-      
-      .top-4 {
-        top: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .gap-12 {
+        gap: 3rem;
       }
-      
-      .left-4 {
-        left: 1rem;
+
+      .lg\\:gap-12 {
+        gap: 3rem;
       }
-      
-      .bg-opacity-90 {
-        background-opacity: 0.9;
+
+      .lg\\:justify-start {
+        justify-content: flex-start;
       }
-      
-      .p-3 {
-        padding: 0.75rem;
+    }
+
+    /* Position */
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-10 {
+      top: 1rem;
+    }
+
+    .right-10 {
+      right: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .top-10 {
+        top: 2.5rem;
       }
-      
-      .text-xs {
-        font-size: 0.75rem;
+
+      .right-10 {
+        right: 2.5rem;
       }
+    }
+
+    /* Z-index */
+    .z-10 {
+      z-index: 10;
+    }
+
+    .z-20 {
+      z-index: 20;
+    }
+
+    .z-30 {
+      z-index: 30;
+    }
+
+    /* Opacity */
+    .opacity-10 {
+      opacity: 0.1;
+    }
+
+    /* Font styles */
+    .italic {
+      font-style: italic;
+    }
+
+    /* Additional Classes */
+    .space-y-4>*+* {
+      margin-top: 1rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 640px) {
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .shadow-xl {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .top-4 {
+      top: 1rem;
+    }
+
+    .left-4 {
+      left: 1rem;
+    }
+
+    .bg-opacity-90 {
+      background-opacity: 0.9;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
 
     .logo-header {
       width: 180px;
@@ -537,16 +650,16 @@
     }
 
     /* Additional responsive and utility styles */
-         .h-screen {
-       height: auto;
-       min-height: 100vh;
-     }
-     
-     @media (min-width: 768px) {
-       .h-screen {
-         height: 100vh;
-       }
-     }
+    .h-screen {
+      height: auto;
+      min-height: 100vh;
+    }
+
+    @media (min-width: 768px) {
+      .h-screen {
+        height: 100vh;
+      }
+    }
 
     .bg-cover {
       background-size: cover;
@@ -755,7 +868,8 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient" style="margin: 0; padding: 0; width: 100vw; min-height: 100vh; position: relative; top: 0; left: 0;">
+  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient"
+    style="margin: 0; padding: 0; width: 100vw; min-height: 100vh; position: relative; top: 0; left: 0;">
     <!-- Sakura Yaprakları - Ürün Etrafında -->
     <div class="floating-petals">
       <div class="petal petal-1"></div>
@@ -770,10 +884,13 @@
       <div class="petal petal-10"></div>
     </div>
 
-    <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20" style="left: -23px; top: 346px;">
+    <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20"
+      style="left: -23px; top: 346px;">
       <!-- Sol Taraf - Content -->
-      <div class="text-left" style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -170px; top: -34px;">
-        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting="" style="color: #000; text-shadow: none;">
+      <div class="text-left"
+        style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -170px; top: -34px;">
+        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting=""
+          style="color: #000; text-shadow: none;">
           AS HAIRNETS
         </h1>
         <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2" style="color: #333;">
@@ -784,7 +901,8 @@
       <!-- Sağ Taraf - Product Image -->
       <div class="relative">
         <div class="product-showcase relative" style="left: 1px;">
-          <img src="img/ashairnet_product.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20" style="left: 272px; top: -606px;">
+          <img src="img/ashairnet_product.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20"
+            style="left: 272px; top: -606px;">
           <div class="glow-effect"></div>
         </div>
       </div>
@@ -796,27 +914,31 @@
     <div class="max-w-6xl mx-auto">
       <!-- Title -->
       <h2 class="text-4xl font-bold mb-12 font-brand hero-title text-center" data-splitting>Hakkımızda</h2>
-      
+
       <!-- Content Container -->
       <div class="flex flex-row gap-8 items-start min-h-[400px]">
         <!-- Left Column - Text Content -->
         <div class="flex-1 pr-4">
           <div class="space-y-4">
             <p class="text-lg leading-relaxed hero-description">
-              AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş bir firmadır.
-              Bale ve sahne sanatlarından endüstriyel mutfaklara, güzellik salonlarından laboratuvarlara kadar birçok alanda tercih edilen saç filelerimiz; hafif, konforlu ve neredeyse görünmez yapısıyla öne çıkar.
+              AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
+              bir firmadır.
+              Bale ve sahne sanatlarından endüstriyel mutfaklara, güzellik salonlarından laboratuvarlara kadar birçok
+              alanda tercih edilen saç filelerimiz; hafif, konforlu ve neredeyse görünmez yapısıyla öne çıkar.
             </p>
             <p class="text-lg leading-relaxed hero-description">
               Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
             </p>
           </div>
         </div>
-        
+
         <!-- Right Column - Hairnet Info Image -->
         <div class="flex-1 flex justify-center items-center">
           <div class="relative w-full max-w-md">
-            <img src="img/hairnet_info.png" alt="AS Hairnet Product Information" class="w-full h-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg pointer-events-none"></div>
+            <img src="img/hairnet_info.png" alt="AS Hairnet Product Information"
+              class="w-full h-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg pointer-events-none">
+            </div>
           </div>
         </div>
       </div>
@@ -824,12 +946,18 @@
   </section>
 
 
-    <!-- Footer -->
-  <footer class="py-16 text-white relative" style="background-image: url('img/waves/wave2.svg'); background-size: 100% 100%; background-position: top left; background-repeat: no-repeat;">
-    
+  <!-- Footer -->
+  <footer class="py-16 text-white relative" style="background-color:rgb(24,20,20); position: relative;">
+    <!-- Wave SVG as colored overlay -->
+    <div class="absolute inset-0"
+      style="background-image: url('img/waves/wave2.svg'); background-size: 100% 100%; background-position: top left; background-repeat: no-repeat; mix-blend-mode: multiply; opacity: 0.8;">
+    </div>
+    <!-- Solid color background -->
+    <div class="absolute inset-0" style="background-color: rgb(248,244,244);"></div>
+
     <div class="container mx-auto px-6 relative z-10 pt-12">
       <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
-        
+
         <!-- Company Information -->
         <div>
           <h3 class="text-lg font-semibold mb-6 text-white">AS Hairnets Co., Ltd.</h3>
@@ -839,12 +967,13 @@
             <p>TURKEY</p>
           </div>
           <div class="mt-6">
-            <a href="mailto:info@ashairnets.com" class="text-gray-400 hover:text-white transition-colors text-sm underline">
+            <a href="mailto:info@ashairnets.com"
+              class="text-gray-400 hover:text-white transition-colors text-sm underline">
               info@ashairnets.com
             </a>
           </div>
         </div>
-        
+
         <!-- Discover our Products -->
         <div>
           <h3 class="text-lg font-semibold mb-6 text-white">Discover our Products</h3>
@@ -854,7 +983,7 @@
             </a>
           </div>
         </div>
-        
+
         <!-- Additional Info & Social -->
         <div>
           <h3 class="text-lg font-semibold mb-6 text-white">Türkiye</h3>
@@ -862,12 +991,13 @@
             <a href="#privacy" class="block text-gray-400 hover:text-white transition-colors text-sm">
               Privacy policy
             </a>
-            
+
             <!-- Social Media -->
             <div class="flex space-x-4 pt-4">
               <a href="#" class="text-gray-400 hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
                 </svg>
               </a>
             </div>
@@ -877,187 +1007,187 @@
     </div>
   </footer>
 
-      <!-- Vendor JS -->
-    <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-    <script src="../s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/splitting/splitting.min.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/jquery.easing.1.3.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/jquery.waitforimages.min.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/velocity.min.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/velocity.ui.js" crossorigin="anonymous"></script>
-    <script src="js/vendor/jquery.waypoints.min.js" crossorigin="anonymous"></script>
+  <!-- Vendor JS -->
+  <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="../s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/splitting/splitting.min.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/jquery.easing.1.3.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/jquery.waitforimages.min.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/velocity.min.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/velocity.ui.js" crossorigin="anonymous"></script>
+  <script src="js/vendor/jquery.waypoints.min.js" crossorigin="anonymous"></script>
 
-      <!-- Başlatıcı -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // GSAP Kayıt
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-        
-        // Splitting.js başlatma
-        Splitting();
-        
-        // Sakura yaprakları paralaks efekti
-        const petals = document.querySelectorAll('.petal');
-        
-        // Yapraklar için paralaks scroll efekti
-        petals.forEach((petal, index) => {
-          const isBackground = petal.style.zIndex === '5';
-          const scrollSpeed = isBackground ? 0.3 : 0.7;
-          
-          gsap.to(petal, {
-            y: () => -100 * scrollSpeed,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".hero-section",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1
-            }
-          });
-        });
-        
-        // Hero başlık animasyonu
-        gsap.from("[data-splitting] .char", {
-          opacity: 0,
-          y: 100,
-          rotateX: -90,
-          stagger: 0.02,
-          duration: 1,
-          ease: "back.out(1.7)",
-          delay: 0.5
-        });
-        
-        // Hero alt yazı animasyonu
-        gsap.from(".hero-subtitle-2, .hero-description", {
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          stagger: 0.2,
-          delay: 1.5,
-          ease: "power2.out"
-        });
-        
-        // Hero buton animasyonu
-        gsap.from(".hero-button", {
-          opacity: 0,
-          scale: 0.8,
-          duration: 0.8,
-          delay: 2,
-          ease: "back.out(1.7)"
-        });
-        
-        // Scroll-triggered animasyonlar
-        gsap.utils.toArray("section").forEach((section, i) => {
-          if (i > 0) { // İlk section'ı atla (hero)
-            gsap.from(section.children, {
-              opacity: 0,
-              y: 100,
-              duration: 1,
-              stagger: 0.2,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none reverse"
-              }
-            });
-          }
-        });
-        
-        // Gallery resim animasyonları
-        gsap.utils.toArray(".gallery-image").forEach((img, i) => {
-          gsap.from(img, {
-            opacity: 0,
-            scale: 0.8,
-            y: 50,
-            duration: 0.8,
-            delay: i * 0.2,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-              trigger: img,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          });
-        });
-        
-        // Paralaks efekt
-        gsap.to(".hero-bg", {
-          yPercent: -50,
+  <!-- Başlatıcı -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // GSAP Kayıt
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+      // Splitting.js başlatma
+      Splitting();
+
+      // Sakura yaprakları paralaks efekti
+      const petals = document.querySelectorAll('.petal');
+
+      // Yapraklar için paralaks scroll efekti
+      petals.forEach((petal, index) => {
+        const isBackground = petal.style.zIndex === '5';
+        const scrollSpeed = isBackground ? 0.3 : 0.7;
+
+        gsap.to(petal, {
+          y: () => -100 * scrollSpeed,
           ease: "none",
           scrollTrigger: {
             trigger: ".hero-section",
             start: "top bottom",
             end: "bottom top",
-            scrub: true
-          }
-        });
-        
-        // Logo hover animasyonu
-        const logo = document.querySelector(".logo-header");
-        if (logo) {
-          logo.addEventListener("mouseenter", () => {
-            gsap.to(logo, {scale: 1.1, duration: 0.3, ease: "power2.out"});
-          });
-          logo.addEventListener("mouseleave", () => {
-            gsap.to(logo, {scale: 1, duration: 0.3, ease: "power2.out"});
-          });
-        }
-        
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              gsap.to(window, {
-                duration: 1.5,
-                scrollTo: target,
-                ease: "power2.inOut"
-              });
-            }
-          });
-        });
-        
-        // Button hover effects
-        document.querySelectorAll('.hover\\:bg-gray-800').forEach(btn => {
-          btn.addEventListener('mouseenter', () => {
-            gsap.to(btn, {scale: 1.05, duration: 0.3, ease: "power2.out"});
-          });
-          btn.addEventListener('mouseleave', () => {
-            gsap.to(btn, {scale: 1, duration: 0.3, ease: "power2.out"});
-          });
-        });
-        
-        // Text animasyonları için Intersection Observer
-        const animateElements = document.querySelectorAll('[data-splitting]');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const chars = entry.target.querySelectorAll('.char');
-              gsap.from(chars, {
-                opacity: 0,
-                y: 100,
-                rotateX: -90,
-                stagger: 0.02,
-                duration: 1,
-                ease: "back.out(1.7)"
-              });
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        
-        animateElements.forEach(el => {
-          if (!el.closest('.hero-section')) { // Hero'daki elementi hariç tut
-            observer.observe(el);
+            scrub: 1
           }
         });
       });
-    </script>
+
+      // Hero başlık animasyonu
+      gsap.from("[data-splitting] .char", {
+        opacity: 0,
+        y: 100,
+        rotateX: -90,
+        stagger: 0.02,
+        duration: 1,
+        ease: "back.out(1.7)",
+        delay: 0.5
+      });
+
+      // Hero alt yazı animasyonu
+      gsap.from(".hero-subtitle-2, .hero-description", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+        delay: 1.5,
+        ease: "power2.out"
+      });
+
+      // Hero buton animasyonu
+      gsap.from(".hero-button", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        delay: 2,
+        ease: "back.out(1.7)"
+      });
+
+      // Scroll-triggered animasyonlar
+      gsap.utils.toArray("section").forEach((section, i) => {
+        if (i > 0) { // İlk section'ı atla (hero)
+          gsap.from(section.children, {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          });
+        }
+      });
+
+      // Gallery resim animasyonları
+      gsap.utils.toArray(".gallery-image").forEach((img, i) => {
+        gsap.from(img, {
+          opacity: 0,
+          scale: 0.8,
+          y: 50,
+          duration: 0.8,
+          delay: i * 0.2,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      });
+
+      // Paralaks efekt
+      gsap.to(".hero-bg", {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      // Logo hover animasyonu
+      const logo = document.querySelector(".logo-header");
+      if (logo) {
+        logo.addEventListener("mouseenter", () => {
+          gsap.to(logo, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+        });
+        logo.addEventListener("mouseleave", () => {
+          gsap.to(logo, { scale: 1, duration: 0.3, ease: "power2.out" });
+        });
+      }
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            gsap.to(window, {
+              duration: 1.5,
+              scrollTo: target,
+              ease: "power2.inOut"
+            });
+          }
+        });
+      });
+
+      // Button hover effects
+      document.querySelectorAll('.hover\\:bg-gray-800').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          gsap.to(btn, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        });
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
+        });
+      });
+
+      // Text animasyonları için Intersection Observer
+      const animateElements = document.querySelectorAll('[data-splitting]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const chars = entry.target.querySelectorAll('.char');
+            gsap.from(chars, {
+              opacity: 0,
+              y: 100,
+              rotateX: -90,
+              stagger: 0.02,
+              duration: 1,
+              ease: "back.out(1.7)"
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      animateElements.forEach(el => {
+        if (!el.closest('.hero-section')) { // Hero'daki elementi hariç tut
+          observer.observe(el);
+        }
+      });
+    });
+  </script>
 
 </body>
 
