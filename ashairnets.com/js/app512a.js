@@ -34,6 +34,34 @@ $(document).ready(function(){
 
     Splitting({ target: $(".splitted"),by:'chars' });
 
+    // Mouse-controlled petal rotations
+    let mouseY = 0;
+    let windowHeight = window.innerHeight;
+    
+    $(document).on('mousemove', function(e) {
+        mouseY = e.clientY;
+        updatePetalRotations();
+    });
+    
+    function updatePetalRotations() {
+        // Calculate rotation based on mouse Y position (0 to window height)
+        // Map mouse position to rotation range (-180 to 180 degrees)
+        const mousePercent = mouseY / windowHeight;
+        const baseRotation = (mousePercent - 0.5) * 360; // -180 to 180 degrees
+        
+        // Apply rotation to all petal elements with slight variations
+        $('.petal, .petallo').each(function(index) {
+            const variation = (index % 3 - 1) * 15; // Add some variation between petals
+            const finalRotation = baseRotation + variation;
+            
+            gsap.to(this, {
+                rotation: finalRotation,
+                duration: 0.3,
+                ease: "power2.out",
+                transformOrigin: "center center"
+            });
+        });
+    }
 
     $(window).scrollTop(0);
     
@@ -330,16 +358,17 @@ $('body').waitForImages(function() {
         gsap.from("#JDG",2, {yPercent: 20,rotation:-20, opacity:1,ease: Cubic.easeOut,delay:.0 });
 
 
-        gsap.from(".petallo.p0",3.5, {rotate:10,yPercent: 200,opacity:1,ease: Expo.easeOut,delay:.1 });
-        gsap.from(".petallo.p1",3.5, {rotate:10,yPercent: 200,opacity:1,ease: Expo.easeOut,delay:.1 });
-        gsap.from(".petallo.p2",2.5, {yPercent: 180,opacity:1,ease: Expo.easeOut,delay:.2 });
-        gsap.from(".petallo.p3",3.5, {rotate:5,yPercent: 200,opacity:1,ease: Expo.easeOut,delay:.3 });
-        gsap.from(".petallo.p4",5.5, {rotate:12,yPercent: 150,opacity:1,ease: Expo.easeOut,delay:.4 });                        
-        gsap.from(".petallo.p5",5.5, {rotate:-50,yPercent: 150,opacity:1,ease: Expo.easeOut,delay:.4 });        
+        // Modified petal animations - removed rotation to allow mouse control
+        gsap.from(".petallo.p0",3.5, {yPercent: 200,opacity:0,ease: Expo.easeOut,delay:.1 });
+        gsap.from(".petallo.p1",3.5, {yPercent: 200,opacity:0,ease: Expo.easeOut,delay:.1 });
+        gsap.from(".petallo.p2",2.5, {yPercent: 180,opacity:0,ease: Expo.easeOut,delay:.2 });
+        gsap.from(".petallo.p3",3.5, {yPercent: 200,opacity:0,ease: Expo.easeOut,delay:.3 });
+        gsap.from(".petallo.p4",5.5, {yPercent: 150,opacity:0,ease: Expo.easeOut,delay:.4 });                        
+        gsap.from(".petallo.p5",5.5, {yPercent: 150,opacity:0,ease: Expo.easeOut,delay:.4 });        
         
-        gsap.from(".petallo.p6",5.5, {rotate:"-=12",yPercent: 150,opacity:1,ease: Expo.easeOut,delay:.5 });
-        gsap.from(".petallo.p7",5, {rotate:12,yPercent: 250,opacity:1,ease: Expo.easeOut,delay:.6 });                
-		gsap.from(".petallo.p8",5, {yPercent: 250,opacity:1,ease: Expo.easeOut,delay:.6 });                        
+        gsap.from(".petallo.p6",5.5, {yPercent: 150,opacity:0,ease: Expo.easeOut,delay:.5 });
+        gsap.from(".petallo.p7",5, {yPercent: 250,opacity:0,ease: Expo.easeOut,delay:.6 });                
+		gsap.from(".petallo.p8",5, {yPercent: 250,opacity:0,ease: Expo.easeOut,delay:.6 });                        
         
         return;
         gsap.utils.toArray(nome).forEach(layer => {
@@ -653,7 +682,7 @@ gsap.utils.toArray(".parallax").forEach(layer => {
     	            scrub: scrub,
         	      },        
 	        y: movement,
-	        rotation:"+=" + Math.floor(Math.random() * (7 - 3 + 1) ) + 3,	        
+	        // Removed rotation to allow mouse control        
 			transformOrigin:"center center"
 	        }
     	);
