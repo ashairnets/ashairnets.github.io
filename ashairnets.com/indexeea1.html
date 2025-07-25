@@ -168,16 +168,16 @@
       pointer-events: none;
     }
 
-         .petal {
-       position: absolute;
-       background-image: url('img/petalo.png');
-       background-size: contain;
-       background-repeat: no-repeat;
-       background-position: center;
-       filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
-       transform-origin: center;
-       transition: transform 0.1s ease-out;
-     }
+    .petal {
+      position: absolute;
+      background-image: url('img/petalo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
+      transform-origin: center;
+      transition: transform 0.1s ease-out;
+    }
 
     /* Organik petal konumları - Görseldeki gibi doğal yerleşim */
     .petal-1 {
@@ -884,8 +884,10 @@
     <div class="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-20"
       style="left: -23px; top: 346px;">
       <!-- Sol Taraf - Content -->
-      <div class="text-left" style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -317px; top: -130px;">
-        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting="" style="color: #000; text-shadow: none;">
+      <div class="text-left"
+        style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); left: -317px; top: -130px;">
+        <h1 class="text-6xl font-bold font-brand mb-4 hero-title" data-splitting=""
+          style="color: #000; text-shadow: none;">
           AS HAIRNETS
         </h1>
         <h2 class="text-2xl mb-6 font-brand italic hero-subtitle-2" style="color: #333;">
@@ -896,7 +898,8 @@
       <!-- Sağ Taraf - Product Image -->
       <div class="relative">
         <div class="product-showcase relative" style="left: 1px;">
-          <img src="img/ashairnet_product.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20" style="left: 351px; top: -557px;">
+          <img src="img/ashairnet_product.png" alt="As Hairnet Product" class="main-product mx-auto relative z-20"
+            style="left: 351px; top: -557px;">
           <div class="glow-effect"></div>
         </div>
       </div>
@@ -929,7 +932,7 @@
         <!-- Right Column - Hairnet Info Image -->
         <div class="flex-1 flex justify-center items-center">
           <div class="relative w-full max-w-md">
-            <img src="img/hairnet_info.png" alt="AS Hairnet Product Information"
+            <img src="img/hairnet_info.jpg" alt="AS Hairnet Product Information"
               class="w-full h-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg pointer-events-none">
             </div>
@@ -947,47 +950,49 @@
         <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#181414"></path>
       </svg>
     </div>
-  
+
     <!-- İçerik -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
-  
+
       <!-- Şirket Bilgisi -->
       <div>
         <h3 class="text-lg font-semibold mb-4">AS Hairnets Co., Ltd.</h3>
         <p class="text-sm text-gray-400">AS Hairnets is a Turkish brand</p>
         <p class="text-sm text-gray-400">Kadıköy, İstanbul</p>
         <p class="text-sm text-gray-400 mb-4">TURKEY</p>
-        <a href="mailto:info@ashairnets.com" class="text-sm text-gray-400 hover:text-white underline">info@ashairnets.com</a>
+                 <a href="mailto:info@ashairnets.com"
+           class="text-sm text-black font-bold hover:text-gray-700">info@ashairnets.com</a>
       </div>
-  
+
       <!-- Ürünler -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Discover our Products</h3>
-        <a href="https://www.ashairnets.com" class="block text-sm text-gray-400 hover:text-white underline">www.ashairnets.com</a>
-      </div>
-  
+     
+
       <!-- Gizlilik ve Sosyal -->
       <div>
         <h3 class="text-lg font-semibold mb-4">Türkiye</h3>
-        <a href="#privacy" class="block text-sm text-gray-400 hover:text-white">Privacy policy</a>
         <div class="flex flex-col items-center space-y-4 mt-6">
           <!-- Instagram SVG simgesi -->
-          <a href="https://www.instagram.com/sinnersrule?igsh=NzNwanVscGZxcmxj" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                     <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank"
+             class="text-black hover:text-gray-700 transition-colors duration-300">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
+              <path
+                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
             </svg>
           </a>
-          
-          <!-- Instagram resim ikonu -->
-          <a href="https://www.instagram.com/sinnersrule?igsh=NzNwanVscGZxcmxj" target="_blank" class="hover:opacity-80 transition-opacity duration-300">
-            <img src="img/Instagram_icon.png.webp" alt="Instagram" class="w-8 h-8 object-contain">
+
+          <!-- Instagram resim ikonu (küçültülmüş boyut) -->
+          <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank"
+            class="hover:opacity-80 transition-opacity duration-300">
+            <img src="img/Instagram_icon.png.webp" alt="Instagram"
+            class="w-3 h-3 object-contain" style="width: 24px; height: 24px;">
           </a>
+
         </div>
       </div>
     </div>
   </footer>
-  
-  
+
+
 
   <!-- Vendor JS -->
   <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" crossorigin="anonymous"></script>
