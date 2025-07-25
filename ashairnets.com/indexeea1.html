@@ -1075,8 +1075,7 @@
         <!-- Sosyal -->
         <div>
           <div class="flex flex-col items-center space-y-4 mt-6">
-            <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank"
-              class="hover:opacity-80 transition-opacity duration-300">
+            <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank">
               <img src="img/Instagram_icon.webp" alt="Instagram" class="w-6 h-6 object-contain"
                 style="width: 24px; height: 24px;">
             </a>
@@ -1150,7 +1149,7 @@
 
       // Scroll-triggered animasyonlar
       gsap.utils.toArray("section").forEach((section, i) => {
-        if (i > 0) { // İlk section'ı atla (hero)
+        if (i > 0 && !section.querySelector('footer')) { // İlk section'ı ve footer'ı atla
           gsap.from(section.children, {
             opacity: 0,
             y: 100,
