@@ -1407,7 +1407,7 @@ a.a-button:hover{
 }
 
 #logo-small-b {
-    top 50%;
+    top: 50%;
     transform: translateY(-50%);
     left:0;
     right: 0;
@@ -2977,4 +2977,9 @@ h1.title span.gin {
         #caroDida{
             top: 670px;
         } 
+}
+
+/* Custom background color */
+.bg-custom-dark {
+    background-color: #171717;
 }
