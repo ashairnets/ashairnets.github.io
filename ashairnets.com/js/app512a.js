@@ -34,9 +34,14 @@ $(document).ready(function(){
 
     Splitting({ target: $(".splitted"),by:'chars' });
 
-    // Mouse-controlled petal rotations
+    // Mouse-controlled petal rotations and floating
     let mouseY = 0;
     let windowHeight = window.innerHeight;
+    
+    // Update window height on resize
+    $(window).on('resize', function() {
+        windowHeight = window.innerHeight;
+    });
     
     $(document).on('mousemove', function(e) {
         mouseY = e.clientY;
@@ -66,8 +71,8 @@ $(document).ready(function(){
             gsap.to(this, {
                 rotation: finalRotation,
                 y: finalYMovement,
-                duration: 0.3,
-                ease: "power2.out",
+                duration: 0.1,
+                ease: "power1.out",
                 transformOrigin: "center center"
             });
         });

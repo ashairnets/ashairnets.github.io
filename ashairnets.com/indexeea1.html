@@ -1006,25 +1006,7 @@
       // Splitting.js başlatma
       Splitting();
 
-      // Sakura yaprakları paralaks efekti
-      const petals = document.querySelectorAll('.petal');
-
-      // Yapraklar için paralaks scroll efekti
-      petals.forEach((petal, index) => {
-        const isBackground = petal.style.zIndex === '5';
-        const scrollSpeed = isBackground ? 0.3 : 0.7;
-
-        gsap.to(petal, {
-          y: () => -100 * scrollSpeed,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero-section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1
-          }
-        });
-      });
+      // Sakura yaprakları - scroll efekti kaldırıldı, sadece mouse kontrolü
 
       // Hero başlık animasyonu
       gsap.from("[data-splitting] .char", {
