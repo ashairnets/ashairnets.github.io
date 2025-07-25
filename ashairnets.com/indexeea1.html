@@ -929,12 +929,36 @@
           </div>
         </div>
 
-        <!-- Right Column - Hairnet Info Image -->
-        <div class="flex-1 flex justify-center items-center">
-          <div class="relative w-full max-w-md">
+        <!-- Right Column - Hairnet Info Images -->
+        <div class="flex-1 flex justify-center items-start gap-4">
+          <div class="relative">
             <img src="img/hairnet_info.jpg" alt="AS Hairnet Product Information"
-              class="w-full h-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg pointer-events-none">
+              class="object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              style=" height: 620px; mask: 
+                     linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+                     linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+                     -webkit-mask: 
+                     linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+                     linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+                     mask-composite: intersect;
+                     -webkit-mask-composite: source-in;">
+            <div class="absolute inset-0 rounded-lg pointer-events-none"
+                 style="background: radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.3) 90%);">
+            </div>
+          </div>
+          <div class="relative">
+            <img src="img/hairnet_info2.jpg" alt="AS Hairnet Product Information 2"
+              class="object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              style=" height: 620px; mask: 
+                     linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
+                     linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+                     -webkit-mask: 
+                     linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
+                     linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+                     mask-composite: intersect;
+                     -webkit-mask-composite: source-in;">
+            <div class="absolute inset-0 rounded-lg pointer-events-none"
+                 style="background: radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.3) 90%);">
             </div>
           </div>
         </div>
@@ -944,6 +968,9 @@
 
 
   <footer class="relative text-white bg-[#181414]">
+    <!-- Wave background -->
+    <div class="absolute inset-0 w-full h-full pointer-events-none" style="background-image: url('img/waves/wave2.svg'); background-repeat: repeat-x; background-size: 100% 100%; filter: brightness(0) invert(1);"></div>
+  
     <!-- Dalga SVG (üst kenar için) -->
     <div class="absolute top-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
       <svg class="relative block w-full h-20" viewBox="0 0 1200 100" preserveAspectRatio="none">
@@ -969,7 +996,6 @@
 
       <!-- Gizlilik ve Sosyal -->
       <div>
-        <h3 class="text-lg font-semibold mb-4">Türkiye</h3>
         <div class="flex flex-col items-center space-y-4 mt-6">
           <!-- Instagram SVG simgesi -->
                      <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank"
@@ -983,7 +1009,7 @@
           <!-- Instagram resim ikonu (küçültülmüş boyut) -->
           <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank"
             class="hover:opacity-80 transition-opacity duration-300">
-            <img src="img/Instagram_icon.png.webp" alt="Instagram"
+            <img src="img/Instagram_icon.webp" alt="Instagram"
             class="w-3 h-3 object-contain" style="width: 24px; height: 24px;">
           </a>
 
