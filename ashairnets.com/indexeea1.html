@@ -168,16 +168,16 @@
       pointer-events: none;
     }
 
-    .petal {
-      position: absolute;
-      background-image: url('img/petalo.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
-      animation: floatingPetal 6s ease-in-out infinite;
-      transform-origin: center;
-    }
+         .petal {
+       position: absolute;
+       background-image: url('img/petalo.png');
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: center;
+       filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
+       transform-origin: center;
+       transition: transform 0.1s ease-out;
+     }
 
     /* Organik petal konumları - Görseldeki gibi doğal yerleşim */
     .petal-1 {

@@ -49,13 +49,23 @@ $(document).ready(function(){
         const mousePercent = mouseY / windowHeight;
         const baseRotation = (mousePercent - 0.5) * 360; // -180 to 180 degrees
         
-        // Apply rotation to all petal elements with slight variations
+        // Calculate inverse Y movement (mouse up = petals down, mouse down = petals up)
+        // Limited movement range: -30px to +30px
+        const maxMovement = 30;
+        const mouseYMovement = (mousePercent - 0.5) * maxMovement * -1; // Inverse movement
+        
+        // Apply rotation and Y movement to all petal elements with slight variations
         $('.petal, .petallo').each(function(index) {
             const variation = (index % 3 - 1) * 15; // Add some variation between petals
             const finalRotation = baseRotation + variation;
             
+            // Add floating variation for each petal
+            const floatingVariation = (index % 5 - 2) * 5; // -10px to +10px variation
+            const finalYMovement = mouseYMovement + floatingVariation;
+            
             gsap.to(this, {
                 rotation: finalRotation,
+                y: finalYMovement,
                 duration: 0.3,
                 ease: "power2.out",
                 transformOrigin: "center center"
