@@ -34,19 +34,44 @@ $(document).ready(function(){
 
     Splitting({ target: $(".splitted"),by:'chars' });
 
-    // Mouse-controlled petal rotations and floating
+    // Mouse-controlled petal rotations and floating - Initialize after page load
     let mouseY = 0;
     let windowHeight = window.innerHeight;
+    let isMouseInitialized = false;
     
-    // Update window height on resize
-    $(window).on('resize', function() {
-        windowHeight = window.innerHeight;
-    });
-    
-    $(document).on('mousemove', function(e) {
-        mouseY = e.clientY;
-        updatePetalRotations();
-    });
+    // Initialize mouse control after everything is loaded
+    window.initMouseControl = function() {
+        if (isMouseInitialized) return;
+        
+        console.log('Initializing mouse control for petals...');
+        const petalCount = $('.petal').length;
+        console.log('Found petals:', petalCount);
+        
+        if (petalCount === 0) {
+            setTimeout(initMouseControl, 100); // Retry if petals not found
+            return;
+        }
+        
+        isMouseInitialized = true;
+        
+        // Update window height on resize
+        $(window).on('resize', function() {
+            windowHeight = window.innerHeight;
+        });
+        
+        $(document).on('mousemove', function(e) {
+            mouseY = e.clientY;
+            updatePetalRotations();
+        });
+        
+        // Test movement on page load
+        setTimeout(function() {
+            mouseY = windowHeight / 2; // Center position
+            updatePetalRotations();
+        }, 1000);
+        
+        console.log('Mouse control initialized successfully!');
+    }
     
     function updatePetalRotations() {
         // Calculate rotation based on mouse Y position (0 to window height)
@@ -60,7 +85,7 @@ $(document).ready(function(){
         const mouseYMovement = (mousePercent - 0.5) * maxMovement * -1; // Inverse movement
         
         // Apply rotation and Y movement to all petal elements with slight variations
-        $('.petal, .petallo').each(function(index) {
+        $('.petal').each(function(index) {
             const variation = (index % 3 - 1) * 15; // Add some variation between petals
             const finalRotation = baseRotation + variation;
             
@@ -77,6 +102,9 @@ $(document).ready(function(){
             });
         });
     }
+    
+    // Initialize mouse control when document is ready
+    setTimeout(initMouseControl, 500);
 
     $(window).scrollTop(0);
     
