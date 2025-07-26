@@ -1258,16 +1258,33 @@
         }
       });
 
-      // Scroll ile hareket eden petal animasyonu - Tüm sayfa boyunca
+      // Scroll ile hareket eden petal animasyonu - Sınırlı alan
+      const heroSection = document.querySelector('.hero-section');
+      const aboutSection = document.querySelector('#about');
       const petals = document.querySelectorAll('.hero-section .petal');
       
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-        petals.forEach((petal, index) => {
-          const speed = 0.3 + (index + 1) * 0.1;
-          const angle = (scrollY * 0.05 + index * 30) % 360;
-          petal.style.transform = `translateY(${scrollY * speed}px) rotate(${angle}deg)`;
-        });
+        const heroHeight = heroSection.offsetHeight;
+        const aboutEnd = aboutSection.offsetTop + aboutSection.offsetHeight;
+        
+        // Hero section'dan about section sonuna kadar hareket eder
+        if (scrollY <= aboutEnd) {
+          petals.forEach((petal, index) => {
+            const speed = 0.3 + (index + 1) * 0.1;
+            const angle = (scrollY * 0.05 + index * 30) % 360;
+            const maxMove = Math.min(scrollY * speed, aboutEnd - heroHeight + 200);
+            petal.style.transform = `translateY(${maxMove}px) rotate(${angle}deg)`;
+            petal.style.opacity = '0.7';
+          });
+        } else {
+          // About section'dan sonra petaller sabit kalır
+          petals.forEach((petal, index) => {
+            const maxMove = aboutEnd - heroHeight + 200;
+            petal.style.transform = `translateY(${maxMove}px) rotate(0deg)`;
+            petal.style.opacity = '0.3';
+          });
+        }
       });
     });
   </script>
