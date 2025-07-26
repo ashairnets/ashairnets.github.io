@@ -1266,12 +1266,20 @@
         const scrollY = window.scrollY;
         const heroHeight = heroSection.offsetHeight;
         
-        // Sadece hero section görünür durumdayken animasyon çalışsın
-        if (scrollY < heroHeight) {
+        // Hero section içindeyken petaller görünür ve hareket eder
+        if (scrollY < heroHeight * 0.9) { // %90'ına kadar göster
           petals.forEach((petal, index) => {
             const speed = 0.3 + (index + 1) * 0.1;
             const angle = (scrollY * 0.05 + index * 30) % 360;
             petal.style.transform = `translateY(${scrollY * speed}px) rotate(${angle}deg)`;
+            petal.style.opacity = '0.7';
+            petal.style.visibility = 'visible';
+          });
+        } else {
+          // Hero section dışında petaller gizlenir
+          petals.forEach((petal) => {
+            petal.style.opacity = '0';
+            petal.style.visibility = 'hidden';
           });
         }
       });
