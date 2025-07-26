@@ -2992,7 +2992,7 @@ h1.title span.gin {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 10;
+    z-index: 30; /* Container'ın üstünde olması için yüksek değer */
 }
 
 .petal {
@@ -3011,3 +3011,12 @@ h1.title span.gin {
 .petal-3 { top: 60%; left: 70%; }
 .petal-4 { top: 80%; left: 30%; }
 .petal-5 { top: 50%; left: 80%; }
+
+/* Petalların z-index ayarları - yarısı ürün önünde, yarısı arkasında */
+.petal-1, .petal-3, .petal-5 {
+    z-index: 50; /* Ürün önünde - çok yüksek değer */
+}
+
+.petal-2, .petal-4 {
+    z-index: 15; /* Ürün arkasında ama görünür */
+}
