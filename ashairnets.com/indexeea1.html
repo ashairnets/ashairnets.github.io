@@ -992,63 +992,35 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about" class="py-20 px-6 bg-white relative z-40">
-    <div class="max-w-6xl mx-auto">
-      <!-- Title -->
-      <h2 class="text-4xl font-bold mb-12 font-brand hero-title text-center" data-splitting>Hakkımızda</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <!-- Content Container -->
-      <div class="flex flex-col md:flex-row gap-8 items-start min-h-[400px]">
-        <!-- Left Column - Text Content -->
-        <div class="flex-1 pr-4">
-          <div class="space-y-4">
-            <p class="text-lg leading-relaxed hero-description">
-              AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
-              bir firmadır.
-              Bale ve sahne sanatlarından endüstriyel mutfaklara, güzellik salonlarından laboratuvarlara kadar birçok
-              alanda tercih edilen saç filelerimiz; hafif, konforlu ve neredeyse görünmez yapısıyla öne çıkar.
-            </p>
-            <p class="text-lg leading-relaxed hero-description">
-              Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
-            </p>
-          </div>
-        </div>
-
-        <!-- Right Column - Hairnet Info Images -->
-        <div class="flex-1 flex flex-col lg:flex-row justify-center items-start gap-4">
-          <div class="relative w-full md:w-auto">
-            <img src="img/hairnet_info.jpg" alt="AS Hairnet Product Information"
-              class="w-full md:w-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hairnet-responsive"
-              style="height: 300px; mask: 
-                     linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%),
-                     linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-                     -webkit-mask: 
-                     linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%),
-                     linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-                     mask-composite: intersect;
-                     -webkit-mask-composite: source-in;">
-            <div class="absolute inset-0 rounded-lg pointer-events-none"
-              style="background: radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.3) 90%);">
-            </div>
-          </div>
-          <div class="relative w-full md:w-auto">
-            <img src="img/hairnet_info2.jpg" alt="AS Hairnet Product Information 2"
-              class="w-full md:w-auto object-contain rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 hairnet-responsive"
-              style="height: 300px; mask: 
-                     linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%),
-                     linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-                     -webkit-mask: 
-                     linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%),
-                     linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%);
-                     mask-composite: intersect;
-                     -webkit-mask-composite: source-in;">
-            <div class="absolute inset-0 rounded-lg pointer-events-none"
-              style="background: radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.3) 90%);">
-            </div>
-          </div>
+      <!-- Sol Sütun: Yazılar -->
+      <div>
+        <h2 class="text-4xl font-bold mb-8 font-brand hero-title text-left" data-splitting>Hakkımızda</h2>
+        <div class="space-y-4 text-left">
+          <p class="text-lg leading-relaxed hero-description">
+            AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla
+            kurulmuş bir firmadır. Bale ve sahne sanatlarından endüstriyel mutfaklara, güzellik salonlarından
+            laboratuvarlara kadar birçok alanda tercih edilen saç filelerimiz; hafif, konforlu ve neredeyse
+            görünmez yapısıyla öne çıkar.
+          </p>
+          <p class="text-lg leading-relaxed hero-description">
+            Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
+          </p>
         </div>
       </div>
+
+      <!-- Sağ Sütun: Görseller -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <img src="img/hairnet_info.jpg"
+          class="w-[48%] max-w-full h-auto object-contain rounded-lg shadow-md transition duration-300"
+          alt="Hairnet 1" />
+        <img src="img/hairnet_info2.jpg"
+          class="w-[48%] max-w-full h-auto object-contain rounded-lg shadow-md transition duration-300"
+          alt="Hairnet 2" />
+      </div>
+
     </div>
   </section>
 
@@ -1060,7 +1032,7 @@
     </div>
 
     <!-- Footer içeriği -->
-    <footer class="relative z-60 px-6 py-10">
+    <footer class="relative z-60 px-6 py-80">
       <div class="max-w-8xl mx-auto text-center     ">
         <!-- Şirket Bilgisi -->
         <div class="mb-8 text-center pt-[400px]">
