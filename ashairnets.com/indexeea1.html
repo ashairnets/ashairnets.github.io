@@ -968,27 +968,28 @@
     <!-- İçerik -->
     <div class="container mx-auto px-4 lg:px-6">
       <div class="flex flex-wrap items-center justify-between gap-12">
-
+    
         <!-- Sol: Logo ve Yazı -->
         <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
-          <img src="img/logo.png" alt="AS Hairnets Logo" class="mx-auto lg:mx-0 mb-6 w-32 lg:w-36">
           <h1 class="text-5xl lg:text-6xl font-bold font-brand mb-4 hero-title">AS HAIRNETS</h1>
           <h2 class="text-xl lg:text-2xl mb-6 font-brand italic hero-subtitle-2">
             Görünmeyen ayrıntı, fark edilen etki
           </h2>
         </div>
-
+    
         <!-- Sağ: Ürün Görseli -->
         <div class="w-full lg:w-1/2 flex justify-center z-10">
-          <div class="relative max-w-xs w-full">
+          <div class="relative w-full max-w-xs">
             <img src="img/ashairnet_product.png" alt="AS Hairnet Kutu"
-              class="w-full h-auto rounded-xl shadow-xl relative z-10">
+                 class="rounded-xl  relative z-10 object-contain"
+                 style="max-height: 420px; width: auto;">
             <div class="glow-effect absolute inset-0 z-0"></div>
           </div>
         </div>
-
+    
       </div>
     </div>
+    
   </section>
 
 
@@ -1023,37 +1024,39 @@
 
 
 
-  <section class="relative bg-custom-dark text-white overflow-hidden w-screen min-h-screen">
-    <!-- Dalga SVG arka plan -->
-    <div class="absolute inset-0 -z-10">
-      <img src="img/waves/wave2.svg" alt="wave background" class="w-full h-full object-cover brightness-0">
-    </div>
+ <section class="relative bg-custom-dark text-white overflow-hidden w-screen">
+  <!-- Dalga SVG Arkaplan -->
+  <div class="absolute inset-0 -z-10">
+    <img src="img/waves/wave2.svg" alt="wave background" class="w-full h-full object-cover brightness-0">
+  </div>
 
-    <!-- Footer içeriği -->
-    <footer class="relative z-60 px-6 py-80">
-      <div class="max-w-8xl mx-auto text-center     ">
-        <!-- Şirket Bilgisi -->
-        <div class="mb-8 text-center pt-[400px]">
-          <h3 class="text-lg font-semibold mb-4 text-center">AS Hairnets Co., Ltd.</h3>
-          <h3 class="text-sm text-gray-400 text-center">AS Hairnets is a Turkish brand</h3>
-          <h3 class="text-sm text-gray-400 text-center">Kadıköy, İstanbul</h3>
-          <h3 class="text-sm text-gray-400 mb-4 text-center">TURKEY</h3>
-          <a href="mailto:info@ashairnets.com"
-            class="text-sm text-white font-bold hover:text-gray-300 text-center block">
-            info@ashairnets.com
-          </a>
-        </div>
+  <!-- Footer içeriği -->
+  <footer class="relative z-10 px-6">
+    <div class="max-w-6xl mx-auto min-h-[400px] flex flex-col justify-end items-center text-center py-16">
 
-        <!-- Sosyal -->
-        <div class="flex justify-center">
-          <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank">
-            <img src="img/Instagram_icon.webp" alt="Instagram" class="w-6 h-6 object-contain"
-              style="width: 24px; height: 24px;">
-          </a>
-        </div>
+      <!-- Şirket Bilgisi -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-2">AS Hairnets Co., Ltd.</h3>
+        <p class="text-sm text-gray-400">AS Hairnets is a Turkish brand</p>
+        <p class="text-sm text-gray-400">Kadıköy, İstanbul</p>
+        <p class="text-sm text-gray-400 mb-2">TURKEY</p>
+        <a href="mailto:info@ashairnets.com"
+          class="text-sm text-white font-bold hover:text-gray-300 block">
+          info@ashairnets.com
+        </a>
       </div>
-    </footer>
-  </section>
+
+      <!-- Sosyal -->
+      <div class="mb-4">
+        <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank">
+          <img src="img/Instagram_icon.webp" alt="Instagram" class="w-6 h-6 object-contain mx-auto">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+</section>
+
 
 
 
