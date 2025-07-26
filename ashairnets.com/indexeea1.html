@@ -950,9 +950,8 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-section h-screen relative overflow-hidden flex items-center justify-center hero-gradient"
-    style="margin: 0; padding: 0; width: 100vw; min-height: 100vh; position: relative; top: 0; left: 0;">
-    <!-- Sakura Yaprakları - Ürün Etrafında -->
+  <section class="hero-section py-20 bg-[#f6f1ed] relative overflow-hidden">
+    <!-- Sakura Yaprakları -->
     <div class="floating-petals">
       <div class="petal petal-1"></div>
       <div class="petal petal-2"></div>
@@ -966,63 +965,62 @@
       <div class="petal petal-10"></div>
     </div>
 
-    <div class="container mx-auto px-4 lg:px-6 relative z-20">
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 min-h-[80vh]">
-        <!-- Sol Taraf - Content -->
-        <div class="text-center flex-1 max-w-lg"
-          style="position: relative; z-index: 30; padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px);">
-          <h1 class="text-5xl lg:text-6xl font-bold font-brand mb-4 hero-title" data-splitting=""
-            style="color: #000; text-shadow: none;">
-            AS HAIRNETS
-          </h1>
-          <h2 class="text-xl lg:text-2xl mb-6 font-brand italic hero-subtitle-2" style="color: #333;">
+    <!-- İçerik -->
+    <div class="container mx-auto px-4 lg:px-6">
+      <div class="flex flex-wrap items-center justify-between gap-12">
+
+        <!-- Sol: Logo ve Yazı -->
+        <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
+          <img src="img/logo.png" alt="AS Hairnets Logo" class="mx-auto lg:mx-0 mb-6 w-32 lg:w-36">
+          <h1 class="text-5xl lg:text-6xl font-bold font-brand mb-4 hero-title">AS HAIRNETS</h1>
+          <h2 class="text-xl lg:text-2xl mb-6 font-brand italic hero-subtitle-2">
             Görünmeyen ayrıntı, fark edilen etki
           </h2>
         </div>
 
-        <!-- Sağ Taraf - Product Image -->
-        <div class="relative flex-1 max-w-lg">
-          <div class="product-showcase relative flex justify-center items-center">
-            <img src="img/ashairnet_product.png" alt="As Hairnet Product"
-              class="main-product relative z-20 max-w-full h-auto">
-            <div class="glow-effect"></div>
+        <!-- Sağ: Ürün Görseli -->
+        <div class="w-full lg:w-1/2 flex justify-center z-10">
+          <div class="relative max-w-xs w-full">
+            <img src="img/ashairnet_product.png" alt="AS Hairnet Kutu"
+              class="w-full h-auto rounded-xl shadow-xl relative z-10">
+            <div class="glow-effect absolute inset-0 z-0"></div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
+
   <section id="about" class="py-20 px-6 bg-white relative z-40">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
 
       <!-- Sol Sütun: Yazılar -->
-      <div>
-        <h2 class="text-4xl font-bold mb-8 font-brand hero-title text-left" data-splitting>Hakkımızda</h2>
-        <div class="space-y-4 text-left">
-          <p class="text-lg leading-relaxed hero-description">
-            AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla
-            kurulmuş bir firmadır. Bale ve sahne sanatlarından endüstriyel mutfaklara, güzellik salonlarından
-            laboratuvarlara kadar birçok alanda tercih edilen saç filelerimiz; hafif, konforlu ve neredeyse
-            görünmez yapısıyla öne çıkar.
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; font-family: 'Playfair Display', serif;">
+          Hakkımızda</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
+            AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
+            bir firmadır...
           </p>
-          <p class="text-lg leading-relaxed hero-description">
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
             Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
           </p>
         </div>
       </div>
 
-      <!-- Sağ Sütun: Görseller -->
-      <div class="flex flex-wrap justify-center gap-4">
-        <img src="img/hairnet_info.jpg"
-          class="w-[48%] max-w-full h-auto object-contain rounded-lg shadow-md transition duration-300"
-          alt="Hairnet 1" />
-        <img src="img/hairnet_info2.jpg"
-          class="w-[48%] max-w-full h-auto object-contain rounded-lg shadow-md transition duration-300"
-          alt="Hairnet 2" />
+      <!-- Sağ Sütun: Resimler -->
+      <div style="flex: 1; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <img src="img/hairnet_info.jpg" alt="Hairnet 1"
+          style="max-width: 48%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" />
+        <img src="img/hairnet_info2.jpg" alt="Hairnet 2"
+          style="max-width: 48%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" />
       </div>
 
     </div>
   </section>
+
 
 
   <section class="relative bg-custom-dark text-white overflow-hidden w-screen min-h-screen">
