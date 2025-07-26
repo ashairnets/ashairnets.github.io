@@ -3012,11 +3012,11 @@ h1.title span.gin {
 .petal-4 { top: 80%; left: 30%; }
 .petal-5 { top: 50%; left: 80%; }
 
-/* Petalların z-index ayarları - yarısı ürün önünde, yarısı arkasında */
+/* Petalların z-index ayarları - about section'ın arkasında kalacak */
 .petal-1, .petal-3, .petal-5 {
-    z-index: 50; /* Ürün önünde - çok yüksek değer */
+    z-index: 25; /* Ürün önünde ama about'tan düşük */
 }
 
 .petal-2, .petal-4 {
-    z-index: 15; /* Ürün arkasında ama görünür */
+    z-index: 5; /* En arkada */
 }

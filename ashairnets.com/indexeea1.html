@@ -991,7 +991,7 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 px-6 bg-white">
+  <section id="about" class="py-20 px-6 bg-white relative z-40">
     <div class="max-w-6xl mx-auto">
       <!-- Title -->
       <h2 class="text-4xl font-bold mb-12 font-brand hero-title text-center" data-splitting>Hakkımızda</h2>
@@ -1258,30 +1258,16 @@
         }
       });
 
-      // Scroll ile hareket eden petal animasyonu - Sadece Hero Section
-      const heroSection = document.querySelector('.hero-section');
+      // Scroll ile hareket eden petal animasyonu - Tüm sayfa boyunca
       const petals = document.querySelectorAll('.hero-section .petal');
       
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-        const heroHeight = heroSection.offsetHeight;
-        
-        // Hero section içindeyken petaller görünür ve hareket eder
-        if (scrollY < heroHeight * 0.9) { // %90'ına kadar göster
-          petals.forEach((petal, index) => {
-            const speed = 0.3 + (index + 1) * 0.1;
-            const angle = (scrollY * 0.05 + index * 30) % 360;
-            petal.style.transform = `translateY(${scrollY * speed}px) rotate(${angle}deg)`;
-            petal.style.opacity = '0.7';
-            petal.style.visibility = 'visible';
-          });
-        } else {
-          // Hero section dışında petaller gizlenir
-          petals.forEach((petal) => {
-            petal.style.opacity = '0';
-            petal.style.visibility = 'hidden';
-          });
-        }
+        petals.forEach((petal, index) => {
+          const speed = 0.3 + (index + 1) * 0.1;
+          const angle = (scrollY * 0.05 + index * 30) % 360;
+          petal.style.transform = `translateY(${scrollY * speed}px) rotate(${angle}deg)`;
+        });
       });
     });
   </script>
