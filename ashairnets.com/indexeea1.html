@@ -942,6 +942,8 @@
 
 <body class="bg-white text-black font-sans m-0 p-0" style="margin: 0; padding: 0;">
 
+
+
   <!-- Logo -->
   <header class="absolute top-0 left-0 m-4 z-50">
     <img src="img/logo_small.png" alt="AS Hairnet Logo" class="logo-header">
@@ -1253,6 +1255,24 @@
       animateElements.forEach(el => {
         if (!el.closest('.hero-section')) { // Hero'daki elementi hariç tut
           observer.observe(el);
+        }
+      });
+
+      // Scroll ile hareket eden petal animasyonu - Sadece Hero Section
+      const heroSection = document.querySelector('.hero-section');
+      const petals = document.querySelectorAll('.hero-section .petal');
+      
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+        
+        // Sadece hero section görünür durumdayken animasyon çalışsın
+        if (scrollY < heroHeight) {
+          petals.forEach((petal, index) => {
+            const speed = 0.3 + (index + 1) * 0.1;
+            const angle = (scrollY * 0.05 + index * 30) % 360;
+            petal.style.transform = `translateY(${scrollY * speed}px) rotate(${angle}deg)`;
+          });
         }
       });
     });
