@@ -52,7 +52,7 @@
       }
 
       footer {
-        padding: 1rem !important;
+        padding: 5rem !important;
       }
 
       footer .grid {
@@ -1061,14 +1061,15 @@
 
     <!-- Footer içeriği -->
     <footer class="relative z-60 px-6 py-10">
-      <div class="max-w-4xl mx-auto text-center">
+      <div class="max-w-8xl mx-auto text-center     ">
         <!-- Şirket Bilgisi -->
-        <div class="mb-8 text-center">
+        <div class="mb-8 text-center pt-[400px]">
           <h3 class="text-lg font-semibold mb-4 text-center">AS Hairnets Co., Ltd.</h3>
-          <p class="text-sm text-gray-400 text-center">AS Hairnets is a Turkish brand</p>
-          <p class="text-sm text-gray-400 text-center">Kadıköy, İstanbul</p>
-          <p class="text-sm text-gray-400 mb-4 text-center">TURKEY</p>
-          <a href="mailto:info@ashairnets.com" class="text-sm text-white font-bold hover:text-gray-300 text-center block">
+          <h3 class="text-sm text-gray-400 text-center">AS Hairnets is a Turkish brand</h3>
+          <h3 class="text-sm text-gray-400 text-center">Kadıköy, İstanbul</h3>
+          <h3 class="text-sm text-gray-400 mb-4 text-center">TURKEY</h3>
+          <a href="mailto:info@ashairnets.com"
+            class="text-sm text-white font-bold hover:text-gray-300 text-center block">
             info@ashairnets.com
           </a>
         </div>
@@ -1259,12 +1260,12 @@
       const heroSection = document.querySelector('.hero-section');
       const aboutSection = document.querySelector('#about');
       const petals = document.querySelectorAll('.hero-section .petal');
-      
+
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         const heroHeight = heroSection.offsetHeight;
         const aboutEnd = aboutSection.offsetTop + aboutSection.offsetHeight;
-        
+
         // Hero section'dan about section sonuna kadar hareket eder
         if (scrollY <= aboutEnd) {
           petals.forEach((petal, index) => {
