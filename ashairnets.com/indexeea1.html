@@ -1065,12 +1065,13 @@
   </header>
 
   <!-- Top Navigation -->
-  <nav class="absolute top-0 right-0 m-4 z-50" style="font-weight:600;">
-    <ul style="display:flex; gap:1rem; list-style:none; margin:0; padding:0;">
-      <li><a href="#about" style="color:#2d0b3f; text-decoration:none;">Hakkımızda</a></li>
-      <li><a href="#features" style="color:#2d0b3f; text-decoration:none;">Ürün Özellikleri</a></li>
-      <li><a href="#segments" style="color:#2d0b3f; text-decoration:none;">Kullanım Alanları</a></li>
-      <li><a href="#why" style="color:#2d0b3f; text-decoration:none;">Neden AS Hairnets</a></li>
+  <nav class="navbar">
+    <button class="menu-btn" id="menuToggle" aria-label="Menüyü Aç/Kapat">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Hakkımızda</a></li>
+      <li><a href="#features">Ürün Özellikleri</a></li>
+      <li><a href="#segments">Kullanım Alanları</a></li>
+      <li><a href="#why">Neden AS Hairnets</a></li>
     </ul>
   </nav>
 
@@ -1485,13 +1486,25 @@
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
             gsap.to(window, {
-              duration: 1.5,
+              duration: 1.0,
               scrollTo: target,
               ease: "power2.inOut"
             });
           }
+          // Mobile menüyü kapat
+          const nav = document.querySelector('.navbar');
+          nav && nav.classList.remove('open');
         });
       });
+
+      // Mobile menü toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navbar = document.querySelector('.navbar');
+      if (menuToggle && navbar) {
+        menuToggle.addEventListener('click', () => {
+          navbar.classList.toggle('open');
+        });
+      }
 
       // Button hover effects
       document.querySelectorAll('.hover\\:bg-gray-800').forEach(btn => {
@@ -1534,4 +1547,5 @@
 
 </body>
 
+</html>
 </html>
