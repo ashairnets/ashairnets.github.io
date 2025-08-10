@@ -179,6 +179,221 @@
       will-change: transform;
     }
 
+    /* Product image top/bottom subtle fade */
+    .product-fade-img {
+      /* Standard */
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0.0) 100%);
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      /* WebKit */
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0.0) 100%);
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+    }
+
+    /* productStuff görselinde alt ve sağda transparan solma */
+    .product-stuff-fade {
+      /* Alt (bottom) ve Sağ (right) kenarda solma için birleşik maske */
+      mask-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 1) 88%, rgba(0, 0, 0, 0) 100%);
+      mask-composite: intersect;
+      -webkit-mask-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 1) 88%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-composite: source-in;
+      /* WebKit için intersect eşleniği */
+      display: block;
+      /* yatay ortalama için blok davranış */
+      margin-left: auto;
+      /* sola/sağa otomatik boşluk */
+      margin-right: auto;
+    }
+
+    /* Ürün Özellikleri stili */
+    .highlight-note {
+      background: rgba(95, 138, 180, 0.18);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 1rem 0 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .features-list li {
+      position: relative;
+      padding-left: 2rem;
+      color: #5a5a5a;
+      line-height: 1.6;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #c83b87;
+      /* pembe ton */
+    }
+
+    /* Özellikler giriş paragrafı geniş akış */
+    .features-intro {
+      display: block;
+      max-width: none;
+      width: 100%;
+      background: transparent !important;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      padding: 0;
+      text-align: left;
+    }
+
+    /* Segmentlere Özel Kullanım Alanları */
+    .segments-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .segments-title {
+      display: inline-block;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      text-align: left;
+      color: #1c2440;
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    /* Başlık satırlarını sabitle: her span tek satır, alt alta */
+    .segments-title span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .segment {
+      margin-bottom: 3rem;
+    }
+
+    .segment-header {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .segment-header.center {
+      /* Başlık tam ortada; numara sağda mutlak konumlu */
+      text-align: center;
+      padding-right: 3.5rem;
+      /* sağdaki numara için nefes */
+    }
+
+    .segment-header.left-number {
+      padding-left: 3.5rem;
+      /* soldaki numara için nefes */
+    }
+
+    .segment-header.right {
+      text-align: right;
+      padding-right: 3.5rem;
+    }
+
+    .segment-title {
+      font-size: 1.75rem;
+      color: #2d0b3f;
+      /* başlık rengi - mor ton */
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .segment-number {
+      position: absolute;
+      top: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2d0b3f;
+      line-height: 1;
+    }
+
+    .segment-header.center .segment-number,
+    .segment-header.right .segment-number {
+      right: 0;
+    }
+
+    .segment-header.left-number .segment-number {
+      left: 0;
+    }
+
+    /* Segment giriş paragrafları: geniş akış */
+    .segment-intro {
+      display: block;
+      width: 100%;
+      max-width: none;
+      text-align: left;
+      margin: 0.5rem 0 0.25rem 0;
+    }
+
+    /* Neden AS Hairnets başlığı */
+    .why-title {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 1rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .why-question {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      color: #9c2ba3;
+      line-height: 0.85;
+    }
+
+    .why-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      color: #2d0b3f;
+    }
+
+    .why-text .line1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .why-text .line2 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .why-sub {
+      display: block;
+      max-width: none;
+      width: 100%;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+      background: transparent !important;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+    }
+
     /* Gallery resimler için hover efekt */
     .gallery-image {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -231,167 +446,7 @@
       }
     }
 
-    /* Sakura Petals - Uçan Yapraklar */
-    .floating-petals {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-    }
 
-
-
-    /* Sakura yaprakları - ürün etrafında konumlandırılmış */
-    .floating-petals {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .petal {
-      position: absolute;
-      background-image: url('img/petalo.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.4));
-      transform-origin: center;
-      transition: transform 0.1s ease-out;
-    }
-
-    /* Organik petal konumları - Görseldeki gibi doğal yerleşim */
-    .petal-1 {
-      width: 24px;
-      height: 24px;
-      top: 15%;
-      left: 35%;
-      z-index: 15;
-      animation-delay: 0s;
-      transform: rotate(-25deg);
-      opacity: 0.9;
-    }
-
-    .petal-2 {
-      width: 32px;
-      height: 32px;
-      top: 28%;
-      left: 75%;
-      z-index: 25;
-      animation-delay: 1s;
-      transform: rotate(95deg);
-      opacity: 0.85;
-    }
-
-    .petal-3 {
-      width: 18px;
-      height: 18px;
-      top: 60%;
-      left: 25%;
-      z-index: 8;
-      animation-delay: 2s;
-      transform: rotate(-140deg);
-      opacity: 0.7;
-    }
-
-    .petal-4 {
-      width: 28px;
-      height: 28px;
-      top: 20%;
-      left: 65%;
-      z-index: 20;
-      animation-delay: 3s;
-      transform: rotate(55deg);
-      opacity: 0.8;
-    }
-
-    .petal-5 {
-      width: 22px;
-      height: 22px;
-      top: 70%;
-      left: 80%;
-      z-index: 12;
-      animation-delay: 4s;
-      transform: rotate(-85deg);
-      opacity: 0.6;
-    }
-
-    .petal-6 {
-      width: 30px;
-      height: 30px;
-      top: 45%;
-      left: 15%;
-      z-index: 18;
-      animation-delay: 0.5s;
-      transform: rotate(125deg);
-      opacity: 0.75;
-    }
-
-    .petal-7 {
-      width: 100px;
-      height: 100px;
-      top: 35%;
-      left: 85%;
-      z-index: 10;
-      animation-delay: 1.5s;
-      transform: rotate(-45deg);
-      opacity: 0.65;
-    }
-
-    .petal-8 {
-      width: 26px;
-      height: 26px;
-      top: 12%;
-      left: 50%;
-      z-index: 22;
-      animation-delay: 2.5s;
-      transform: rotate(175deg);
-      opacity: 0.9;
-    }
-
-    .petal-9 {
-      width: 120px;
-      height: 120px;
-      top: 55%;
-      left: 55%;
-      z-index: -1;
-      animation-delay: 3.5s;
-      transform: rotate(-105deg);
-      opacity: 0.85;
-    }
-
-    .petal-10 {
-      width: 200px;
-      height: 200px;
-      top: 75%;
-      left: 40%;
-      z-index: 0;
-      animation-delay: 4.5s;
-      transform: rotate(85deg);
-      opacity: 0.6;
-    }
-
-    @keyframes floatingPetal {
-
-      0%,
-      100% {
-        transform: translateY(0px) rotate(0deg);
-      }
-
-      25% {
-        transform: translateY(-10px) rotate(5deg);
-      }
-
-      50% {
-        transform: translateY(5px) rotate(-3deg);
-      }
-
-      75% {
-        transform: translateY(-5px) rotate(2deg);
-      }
-    }
 
     /* Hero Section Styles */
     .hero-gradient {
@@ -951,19 +1006,7 @@
 
   <!-- Hero -->
   <section class="hero-section py-20 bg-[#f6f1ed] relative overflow-hidden">
-    <!-- Sakura Yaprakları -->
-    <div class="floating-petals">
-      <div class="petal petal-1"></div>
-      <div class="petal petal-2"></div>
-      <div class="petal petal-3"></div>
-      <div class="petal petal-4"></div>
-      <div class="petal petal-5"></div>
-      <div class="petal petal-6"></div>
-      <div class="petal petal-7"></div>
-      <div class="petal petal-8"></div>
-      <div class="petal petal-9"></div>
-      <div class="petal petal-10"></div>
-    </div>
+
 
     <!-- İçerik -->
     <div class="container mx-auto px-4 lg:px-6">
@@ -980,8 +1023,8 @@
         <!-- Sağ: Ürün Görseli -->
         <div class="w-full lg:w-1/2 flex justify-center z-10">
           <div class="relative w-full max-w-xs">
-            <img src="img/ashairnet_product.png" alt="AS Hairnet Kutu" class="rounded-xl  relative z-10 object-contain"
-              style="max-height: 420px; width: auto;">
+            <img src="img/ashairnet_product.png" alt="AS Hairnet Kutu"
+              class="rounded-xl  relative z-10 object-contain product-fade-img" style="max-height: 420px; width: auto;">
             <div class="glow-effect absolute inset-0 z-0"></div>
           </div>
         </div>
@@ -1001,11 +1044,28 @@
           Hakkımızda</h2>
         <div style="display: flex; flex-direction: column; gap: 1rem;">
           <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
-            AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
-            bir firmadır...
+            <strong>AS Hairnets</strong>, farklı sektörlerde güvenli,
+            düzenli ve profesyonel çalışma ortamları oluşturmak amacıyla
+            kurulmuştur. Başta gıda sektörü olmak üzere; restoranlar, üretim
+            alanları, laboratuvarlar, oteller ve temizlik hizmeti sunulan tüm
+            profesyonel alanlarda yaygın olarak kullanılmaktadır.
           </p>
           <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
-            Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
+            Saç filelerimiz, hem ortam güvenliğini artırmak hem de saçın sabit
+            ve düzenli kalmasını sağlamak üzere tasarlanmıştır. Uygulama
+            sırasında konforlu bir kullanım sunar, saçın dağılmasını ve çevreye
+            yayılmasını önler. Özellikle saç modelinin korunması gereken
+            alanlarda fark yaratır.
+          </p>
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
+            Saç ve makyaj profesyonelleri için şekillendirme aşamasında etkili
+            bir yardımcıdır. Saçın formunu sabitler, uygulamanın kalıcılığını
+            destekler.
+          </p>
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
+            Bale ve sahne sanatlarında ise hareket özgürlüğü sunarken saç
+            stilinin sabit kalmasını sağlar, böylece hem görsel bütünlük hem de
+            sahne performansı sorunsuz şekilde devam eder.
           </p>
         </div>
       </div>
@@ -1021,44 +1081,211 @@
     </div>
   </section>
 
+  <section id="about" class="py-20 px-6 bg-white relative z-40">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+
+      <!-- Sol Sütun: Yazılar -->
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; font-family: 'Playfair Display', serif;">
+          Ürün Özellikleri</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <p class="features-intro" style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
+            AS Hairnets saç fileleri; konfor, görünmezlik ve işlevselliği estetikle buluşturan özel bir tasarıma
+            sahiptir.
+          </p>
+          <ul class="features-list">
+            <li>Yaklaşık 0,65 cm açıklıklara sahip olan fileler, 15-20 denye yüksek kalite naylondan üretilmiştir.</li>
+            <li>Lateks içermez, hassas ciltlerde alerjiye neden olmaz.</li>
+            <li>Hafif yapısı sayesinde gün boyu rahat kullanım sunar.</li>
+            <li>İnce dokusu ile neredeyse görünmezdir, profesyonel görünüme gölge düşürmez.</li>
+            <li>Terletmez, kaymaz, yoğun tempolu ortamlarda bile sabit kalır.</li>
+            <li>Saç filesi vücuttaki statik elektriği kendisine toplayarak, kopan saçların ve diğer partiküllerin
+              dökülmesini engeller.</li>
+            <li>Siyah, kahverengi ve beyaz olmak üzere üç farklı renk seçeneği sunar.</li>
+            <li>FDA Gıda Kodu 2-402.11 ile tam uyumludur.</li>
+          </ul>
+          <img src="img/productStuff.png" alt="Ürün özellikleri görseli" class="product-stuff-fade"
+            style="margin-top: 1.5rem; max-width: 520px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);" />
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section class="py-20 bg-white relative z-40">
+    <div class="segments-section">
+      <h2 class="segments-title"><span>Segmentlere Özel</span><span>Kullanım Alanları</span></h2>
+
+      <!-- Segment 1 -->
+      <div class="segment">
+        <div class="segment-header right">
+          <h3 class="segment-title">Gıda, Profesyonel Mutfaklar<br>ve Temizlik Alanları</h3>
+          <div class="segment-number">1</div>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.7;">
+          AS Hairnets saç fileleri gıda, profesyonel mutfak ve temizlik alanlarının hijyenik yapısının korunmasına
+          yardımcı olur.
+        </p>
+        <ul class="features-list" style="margin-top:0.75rem;">
+          <li>AS Hairnets saç fileleri, <strong>FDA Gıda Kodu 2-402.11</strong> ile uyumlu yapısıyla gıda güvenliği
+            standartlarını destekler.</li>
+          <li>Restoranlar, oteller, hastaneler, üretim tesisleri ve laboratuvarlarda güvenle kullanılır.</li>
+          <li>Temizlik hizmetlerinin sunulduğu tüm profesyonel ortamlarda hijyen sağlar.</li>
+          <li>File, kullanılan malzemenin yapısı sayesinde vücuttaki statik elektriği kendisinde toplayarak kopan
+            saçların, tozların ve benzeri partiküllerin gıdaya temasını engeller.</li>
+          <li>Kaymaz ve terletmeyen yapısı sayesinde çalışan konforunu artırır.</li>
+          <li>Standart ölçüde üretilir, her saç tipine uygundur.</li>
+        </ul>
+      </div>
+
+      <!-- Segment 2 -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">2</div>
+          <h3 class="segment-title">Kozmetik ve Güzellik<br>Hizmetleri</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.7;">
+          <strong>Kuaförler, makyaj sanatçıları, spa ve güzellik uzmanları</strong> için özel olarak tasarlanmıştır.
+        </p>
+        <ul class="features-list" style="margin-top:0.75rem;">
+          <li>Fön, topuz, saç şekillendirme veya makyaj uygulamaları sırasında saçın formunu korur.</li>
+          <li>Statik elektriği alarak saçın elektriklenmesini önler, temiz bir görünüm sağlar.</li>
+          <li>Özellikle kıvırcık ve dalgalı saçlarda bukleleri ve doğal hacmi sabit tutar.</li>
+        </ul>
+      </div>
+
+      <!-- Segment 3 -->
+      <div class="segment">
+        <div class="segment-header right">
+          <h3 class="segment-title" style="border:0; outline:0; box-shadow:none; background:transparent;">Bale ve
+            Sahne<br>Sanatları</h3>
+          <div class="segment-number">3</div>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.7;">
+          <strong>Estetik ve disiplinin buluştuğu sahne performanslarında</strong> ideal bir yardımcıdır.
+        </p>
+        <ul class="features-list" style="margin-top:0.75rem;">
+          <li>Topuzun sabit kalmasını sağlayarak sahnede özgür hareket imkânı sunar.</li>
+          <li>Dayanıklı yapısı sayesinde tekrar tekrar kullanılabilir, sürdürülebilir bir alternatiftir.</li>
+          <li>Neredeyse görünmez dokusuyla kostüm altı kullanıma uygundur.</li>
+          <li>Çocuklar ve yetişkinler için konforludur, lateks içermez ve alerji yapmaz.</li>
+        </ul>
+        <img src="img/productStuff2.png" alt="Ürün özellikleri görseli" class="product-stuff-fade"
+          style="margin-top: 1.5rem; max-width: 520px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white relative z-40">
+    <div class="segments-section">
+      <div class="why-title">
+        <div class="why-text">
+          <div class="line1">Neden</div>
+          <div class="line2">AS Hairnets</div>
+        </div>
+        <div class="why-question">?</div>
+      </div>
+      <p class="why-sub" style="color:#7a4b8b; font-size:1.375rem; line-height:1.7; margin: 0.75rem 0 2.25rem 0; text-align:left;">
+        Hijyenin ötesinde güven, estetiğin ötesinde çözüm.
+      </p>
+
+      <!-- 1: Uluslararası Standartlarda Kalite -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">•</div>
+          <h3 class="segment-title">Uluslararası Standartlarda Kalite</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.8;">
+          Tüm ürünlerimiz, <strong>FDA Gıda Kodu 2-402.11</strong> ile uyumlu olarak üretilmektedir. Gıda güvenliği,
+          kişisel hijyen ve profesyonel ortamlara uygunluk açısından titizlikle test edilir.
+        </p>
+      </div>
+
+      <!-- 2: Esnek Ambalaj Seçenekleri -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">•</div>
+          <h3 class="segment-title">Esnek Ambalaj Seçenekleri</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.8;">
+          <strong>Ambalajsız (loose)</strong> ya da raflara uygun <strong>özel ambalajlı</strong> sunumlarımızla,
+          farklı satış kanallarına göre özelleştirilmiş çözümler sunuyoruz.
+        </p>
+      </div>
+
+      <!-- 3: Rekabetçi Fiyat – Yüksek Verimlilik -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">•</div>
+          <h3 class="segment-title">Rekabetçi Fiyat – Yüksek Verimlilik</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.8;">
+          Uygun fiyat politikamızla hem toptan hem perakende satışlarınızda sürdürülebilir kârlılık sağlarsınız.
+        </p>
+      </div>
+
+      <!-- 4: Private Label – Size Özel Üretim -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">•</div>
+          <h3 class="segment-title">Private Label – Size Özel Üretim</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.8;">
+          Ürünlerimizi, kendi markanız altında satışa sunulabilecek şekilde özel ambalaj ve etiket seçenekleriyle
+          üretebiliriz.
+        </p>
+      </div>
+
+      <!-- 5: Kurumsal İş Ortaklığı Yaklaşımı -->
+      <div class="segment">
+        <div class="segment-header left-number">
+          <div class="segment-number">•</div>
+          <h3 class="segment-title">Kurumsal İş Ortaklığı Yaklaşımı</h3>
+        </div>
+        <p class="segment-intro" style="color:#5a5a5a; font-size:1.125rem; line-height:1.8;">
+          AS Hairnets, yalnızca tedarikçi değil; çözüm ortağınızdır. Hızlı iletişim, şeffaf süreç yönetimi ve taleplere
+          esnek cevap verme anlayışımızla her zaman yanınızdayız.
+        </p>
+      </div>
+    </div>
+  </section>
+
 
 
   <section class="relative text-white overflow-hidden w-screen min-h-[400px] flex items-center justify-center">
     <!-- Dalga SVG Arka Plan -->
     <div class="absolute inset-0 -z-10">
-      <img src="img/waves/wave1.svg" alt="wave background"
-     class="w-full h-full object-cover brightness-0 opacity-50"/>
+      <img src="img/waves/wave1.svg" alt="wave background" class="w-full h-full object-cover brightness-0 opacity-50" />
     </div>
-  
+
     <!-- Footer İçeriği -->
     <footer class="w-full relative z-10 px-6">
       <div class="max-w-6xl mx-auto w-full flex flex-col justify-center items-center text-center py-16">
-    
+
         <!-- Şirket Bilgisi -->
         <div class="mb-6 text-center">
-          <h3 class="text-lg font-semibold text-black mb-2">AS Hairnets Co., Ltd.</h3>
-          <p class="text-sm text-gray-400">AS Hairnets is a Turkish brand</p>
-          <p class="text-sm text-gray-400">Kadıköy, İstanbul</p>
-          <p class="text-sm text-gray-400 mb-2">TURKEY</p>
-    
+          <h3 class="text-lg font-semibold text-black mb-2">AS Hairnets</h3>
+
           <!-- Mail -->
           <a href="mailto:info@ashairnets.com" class="text-sm text-black font-bold hover:text-gray-300 block mb-4">
             info@ashairnets.com
           </a>
-    
+
           <!-- Sosyal İkon -->
           <div class="mt-2 text-black">
             <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank">
               <img src="img/Instagram_icon.webp" alt="Instagram"
-                   style="width: 24px; height: 24px; object-fit: contain; display: block; margin: 0 auto;" />
+                style="width: 24px; height: 24px; object-fit: contain; display: block; margin: 0 auto;" />
             </a>
           </div>
         </div>
-    
+
       </div>
     </footer>
   </section>
-  
+
 
 
 
@@ -1090,10 +1317,7 @@
       // Splitting.js başlatma
       Splitting();
 
-      // Sakura yaprakları - mouse kontrolü için başlatma
-      if (typeof initMouseControl === 'function') {
-        setTimeout(initMouseControl, 100);
-      }
+      // Petal efektleri kaldırıldı
 
       // Hero başlık animasyonu
       gsap.from("[data-splitting] .char", {
@@ -1234,34 +1458,7 @@
         }
       });
 
-      // Scroll ile hareket eden petal animasyonu - Sınırlı alan
-      const heroSection = document.querySelector('.hero-section');
-      const aboutSection = document.querySelector('#about');
-      const petals = document.querySelectorAll('.hero-section .petal');
-
-      window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const heroHeight = heroSection.offsetHeight;
-        const aboutEnd = aboutSection.offsetTop + aboutSection.offsetHeight;
-
-        // Hero section'dan about section sonuna kadar hareket eder
-        if (scrollY <= aboutEnd) {
-          petals.forEach((petal, index) => {
-            const speed = 0.3 + (index + 1) * 0.1;
-            const angle = (scrollY * 0.05 + index * 30) % 360;
-            const maxMove = Math.min(scrollY * speed, aboutEnd - heroHeight + 200);
-            petal.style.transform = `translateY(${maxMove}px) rotate(${angle}deg)`;
-            petal.style.opacity = '0.7';
-          });
-        } else {
-          // About section'dan sonra petaller sabit kalır
-          petals.forEach((petal, index) => {
-            const maxMove = aboutEnd - heroHeight + 200;
-            petal.style.transform = `translateY(${maxMove}px) rotate(0deg)`;
-            petal.style.opacity = '0.3';
-          });
-        }
-      });
+      // Petal animasyonları kaldırıldı
     });
   </script>
 
