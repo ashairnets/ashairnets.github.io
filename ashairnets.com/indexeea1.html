@@ -993,27 +993,29 @@
 
 
   <section id="about" class="py-20 px-6 bg-white relative z-40">
-    <div class="about-container">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
 
       <!-- Sol Sütun: Yazılar -->
-      <div class="about-text">
-        <h2 class="about-title">
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; font-family: 'Playfair Display', serif;">
           Hakkımızda</h2>
-        <div class="about-content">
-          <p class="about-paragraph">
-            AS Hairnets, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
+            AS Hairnet, farklı sektörlerde hijyen ve disiplin ihtiyacına profesyonel çözümler sunmak amacıyla kurulmuş
             bir firmadır...
           </p>
-          <p class="about-paragraph">
+          <p style="font-size: 1.125rem; line-height: 1.6; color: #5a5a5a;">
             Ürünlerimiz %100 lateks içermeyen naylondan üretilir ve FDA Gıda Kodu 2-402.11 ile uyumludur.
           </p>
         </div>
       </div>
 
       <!-- Sağ Sütun: Resimler -->
-      <div class="about-images">
-        <img src="img/hairnet_info.jpg" alt="Hairnet 1" class="hairnet-image">
-        <img src="img/hairnet_info2.jpg" alt="Hairnet 2" class="hairnet-image">
+      <div style="flex: 1; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <img src="img/hairnet_info.jpg" alt="Hairnet 1"
+          style="max-width: 48%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" />
+        <img src="img/hairnet_info2.jpg" alt="Hairnet 2"
+          style="max-width: 48%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" />
       </div>
 
     </div>
@@ -1021,39 +1023,51 @@
 
 
 
-  <section class="relative text-white overflow-hidden w-screen flex items-center justify-center">
+  <section class="relative text-white overflow-hidden w-screen min-h-[400px] flex items-center justify-center">
     <!-- Dalga SVG Arka Plan -->
-    <div class="absolute inset-0 -z-10 h-full">
+    <div class="absolute inset-0 -z-10">
       <img src="img/waves/wave1.svg" alt="wave background"
-           class="w-full h-full object-cover brightness-0 opacity-50" />
+     class="w-full h-full object-cover brightness-0 opacity-50"/>
     </div>
   
     <!-- Footer İçeriği -->
-    <footer class="w-full relative z-2 px-6">
-      <div class="max-w-6xl mx-auto w-full flex flex-col justify-center items-center text-center py-8">
-        <div class="text-center">
-          <h3 class="text-lg font-semibold text-black mb-2">AS Hairnets</h3>
+    <footer class="w-full relative z-10 px-6">
+      <div class="max-w-6xl mx-auto w-full flex flex-col justify-center items-center text-center py-16">
+    
+        <!-- Şirket Bilgisi -->
+        <div class="mb-6 text-center">
+          <h3 class="text-lg font-semibold text-black mb-2">AS Hairnets Co., Ltd.</h3>
           <p class="text-sm text-gray-400">AS Hairnets is a Turkish brand</p>
           <p class="text-sm text-gray-400">Kadıköy, İstanbul</p>
           <p class="text-sm text-gray-400 mb-2">TURKEY</p>
-  
-          <a href="mailto:info@ashairnets.com"
-             class="text-sm text-black font-bold hover:text-gray-300 block mb-2">
+    
+          <!-- Mail -->
+          <a href="mailto:info@ashairnets.com" class="text-sm text-black font-bold hover:text-gray-300 block mb-4">
             info@ashairnets.com
           </a>
-  
+    
           <!-- Sosyal İkon -->
           <div class="mt-2 text-black">
             <a href="https://www.instagram.com/ashairnets?igsh=cTFjMWtibXZ6MXh4" target="_blank">
               <img src="img/Instagram_icon.webp" alt="Instagram"
-                   class="mx-auto" style="width: 24px; height: 24px; object-fit: contain;" />
+                   style="width: 24px; height: 24px; object-fit: contain; display: block; margin: 0 auto;" />
             </a>
           </div>
         </div>
+    
       </div>
     </footer>
   </section>
   
+
+
+
+
+
+
+
+
+
 
   <!-- Vendor JS -->
   <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" crossorigin="anonymous"></script>
