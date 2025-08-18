@@ -124,7 +124,7 @@
     section,
     main {
       width: 100%;
-      max-width: 100vw;
+      max-width: 100%;
       margin: 0 auto;
     }
 
@@ -146,7 +146,7 @@
     /* Hero Section Responsive */
     .hero-section {
       min-height: 100vh;
-      width: 100vw;
+      width: 100%; /* 100vw mobilde yatay kaydırma oluşturuyordu */
       margin: 0;
       padding: 0;
       position: relative;
@@ -170,6 +170,9 @@
     .hero-bg {
       will-change: transform;
     }
+
+    /* Global image safety */
+    img { max-width: 100%; height: auto; }
 
     /* Product image top/bottom subtle fade */
     .product-fade-img {
@@ -273,7 +276,7 @@
     /* Başlık satırlarını sabitle: her span tek satır, alt alta */
     .segments-title span {
       display: block;
-      white-space: nowrap;
+      white-space: normal; /* küçük ekranlarda taşmayı engelle */
     }
 
     .segment {
@@ -883,6 +886,9 @@
     .text-center {
       text-align: center;
     }
+
+    /* Tailwind benzeri yardımcı sınıf düzeltmeleri */
+    .w-screen { width: 100% !important; }
 
     .absolute {
       position: absolute;
